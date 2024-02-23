@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app_nsbm/constans.dart';
-import 'package:food_recipe_app_nsbm/widgets/Home.dart';
+import 'package:food_recipe_app_nsbm/screens/Home.dart';
 import 'package:iconsax/iconsax.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int selectedTab = 0;
   List screens = [
-    Home(),
+    const Home(),
     Container(color: Colors.green),
     Container(color: Colors.blue),
     Container(color: Colors.yellow),

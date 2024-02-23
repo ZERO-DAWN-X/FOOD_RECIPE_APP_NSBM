@@ -8,9 +8,12 @@ environment:
 
 dependencies:
   carousel_slider: ^4.2.1
+  chewie: ^1.7.5
   flutter:
     sdk: flutter
   iconsax: ^0.0.8
+  video_player: ^2.8.2
+  youtube_player_flutter: ^8.0.0
 
 dev_dependencies:
   flutter_test:
@@ -22,4 +25,4 @@ flutter:
 
   assets:
     - assets/images/greenhome.png
-    - assets/images/homecover.png
+    - assets/images/

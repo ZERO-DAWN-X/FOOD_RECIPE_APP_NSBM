@@ -64,3 +64,22 @@ TextStyle CategoryBtnStyle = TextStyle(
   fontWeight: FontWeight.w500,
   color: Colors.black,
 );
+
+// -------------------------------------------  Category Buttons Sectors  ---------------------------------------------
+
+Container Sector = Container(
+  decoration: boxDecoration,
+  height: 170,
+  width: 280,
+);
+
+BoxDecoration boxDecoration = BoxDecoration(
+  borderRadius: BorderRadius.circular(10),
+  image: DecorationImage(
+    image: AssetImage("assets/images/1.png"),
+    fit: BoxFit.cover,
+  ),
+);
+
+//---------------------
+
