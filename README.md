@@ -1,3 +1,3 @@
-# food_recipe_app_nsbm
+# FOOD RECIPES APP NSBM
 
 A new Flutter project.
