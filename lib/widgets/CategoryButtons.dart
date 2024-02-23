@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_recipe_app_nsbm/models/TabScreens.dart';
 import 'package:food_recipe_app_nsbm/screens/Test.dart';
 import 'package:food_recipe_app_nsbm/widgets/FoodItemRow.dart';
 import '../constans.dart';
@@ -9,16 +10,6 @@ const List<String> categories = [
   "Best Resipes",
   "Hot Deals",
   "Favourites",
-];
-
-int TabBtn = 0;
-
-const List Tabscreens = [
-  Test(),
-  FoodItemRow(),
-  Test(),
-  FoodItemRow(),
-  FoodItemRow(),
 ];
 
 class CategoryButtons extends StatefulWidget {
@@ -33,18 +24,17 @@ class _CategoryButtonsState extends State<CategoryButtons> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
             children: List.generate(
               categories.length,
               (index) => GestureDetector(
                 onTap: () => setState(() {
                   selectedBtn = index;
-                  TabBtn = index;
                 }),
                 child: Container(
                   decoration: CategoryBtnDecoration.copyWith(
@@ -63,26 +53,67 @@ class _CategoryButtonsState extends State<CategoryButtons> {
               ),
             ),
           ),
-          SizedBox(height: 5),
-          Container(
-            width: 150,
-            height: 100,
-            child: Tabscreens[TabBtn],
-          )
-          // SizedBox(height: 20),
-          // Row(
-          //   children: List.generate(
-          //     10,
-          //     (index) => Container(
-          //       decoration: boxDecoration,
-          //       margin: EdgeInsets.only(right: 15),
-          //       height: 170,
-          //       width: 280,
-          //     ),
-          //   ),
-          // )
-        ],
-      ),
+        ),
+        SizedBox(height: 15),
+
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text(
+              "Food Resipes",
+              style: TextStyle(
+                fontSize: 20,
+                fontFamily: "poppins",
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: const Text(
+                "View All",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontFamily: "poppins",
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
+        ),
+
+        SizedBox(height: 20),
+
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              Tabscreens1[selectedBtn],
+            ],
+          ),
+        ),
+        SizedBox(height: 20),
+
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              Tabscreens2[selectedBtn],
+            ],
+          ),
+        ),
+        // SizedBox(height: 20),
+        // Row(
+        //   children: List.generate(
+        //     10,
+        //     (index) => Container(
+        //       decoration: boxDecoration,
+        //       margin: EdgeInsets.only(right: 15),
+        //       height: 170,
+        //       width: 280,
+        //     ),
+        //   ),
+        // )
+      ],
     );
   }
 }

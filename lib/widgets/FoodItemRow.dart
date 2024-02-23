@@ -3,7 +3,8 @@ import 'package:iconsax/iconsax.dart';
 import '../models/FoodItem.dart';
 
 class FoodItemRow extends StatefulWidget {
-  const FoodItemRow({super.key});
+  final List<Food> foods;
+  const FoodItemRow({super.key, required this.foods});
 
   @override
   State<FoodItemRow> createState() => _FoodItemRowState();
@@ -14,7 +15,7 @@ class _FoodItemRowState extends State<FoodItemRow> {
   Widget build(BuildContext context) {
     return Row(
       children: List.generate(
-        foods.length,
+        widget.foods.length,
         (index) => GestureDetector(
           onTap: () {},
           child: Container(
@@ -38,7 +39,7 @@ class _FoodItemRowState extends State<FoodItemRow> {
                     ),
                     SizedBox(height: 10),
                     Text(
-                      foods[index].name,
+                      widget.foods[index].name,
                       style: foodStyle.copyWith(
                         fontSize: 18,
                       ),
@@ -57,7 +58,7 @@ class _FoodItemRowState extends State<FoodItemRow> {
                                 size: 17,
                               ),
                               SizedBox(width: 7),
-                              Text("${foods[index].time} min",
+                              Text("${widget.foods[index].time} min",
                                   style: foodStyle.copyWith(
                                     fontSize: 15,
                                     color: Colors.grey,
@@ -73,7 +74,7 @@ class _FoodItemRowState extends State<FoodItemRow> {
                               ),
                               SizedBox(width: 5),
                               Text(
-                                  "${foods[index].rate} (${foods[index].review} reviews)",
+                                  "${widget.foods[index].rate} (${foods[index].review} reviews)",
                                   style: foodStyle.copyWith(
                                     fontSize: 15,
                                     color: Colors.grey,
@@ -91,10 +92,11 @@ class _FoodItemRowState extends State<FoodItemRow> {
                   child: IconButton(
                     onPressed: () {
                       setState(() {
-                        foods[index].isLiked = !foods[index].isLiked;
-                        foods[index].review = foods[index].isLiked
-                            ? foods[index].review + 1
-                            : foods[index].review - 1;
+                        widget.foods[index].isLiked =
+                            !widget.foods[index].isLiked;
+                        widget.foods[index].review = widget.foods[index].isLiked
+                            ? widget.foods[index].review + 1
+                            : widget.foods[index].review - 1;
                       });
                     },
                     style: IconButton.styleFrom(
@@ -103,8 +105,12 @@ class _FoodItemRowState extends State<FoodItemRow> {
                     ),
                     iconSize: 16,
                     icon: Icon(
-                      foods[index].isLiked ? Iconsax.heart5 : Iconsax.heart,
-                      color: foods[index].isLiked ? Colors.red : Colors.black,
+                      widget.foods[index].isLiked
+                          ? Iconsax.heart5
+                          : Iconsax.heart,
+                      color: widget.foods[index].isLiked
+                          ? Colors.red
+                          : Colors.black,
                     ),
                   ),
                 )

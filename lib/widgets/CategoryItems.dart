@@ -4,7 +4,7 @@ import 'package:food_recipe_app_nsbm/widgets/CategoryButtons.dart';
 import 'package:food_recipe_app_nsbm/widgets/FoodItemRow.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-
+// get CategoryButtons.dart selectedBtn value and assign it to Tabscreens[selectedBtn]
 
 class CategoryItems extends StatefulWidget {
   const CategoryItems({super.key});
@@ -33,37 +33,7 @@ class _CategoryItemsState extends State<CategoryItems> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Text(
-              "Food Resipes",
-              style: TextStyle(
-                fontSize: 20,
-                fontFamily: "poppins",
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            TextButton(
-              onPressed: () {},
-              child: const Text(
-                "View All",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontFamily: "poppins",
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ],
-        ),
         SizedBox(height: 20),
-
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Tabscreens[0],
-        ),
-        SizedBox(height: 25),
 
         // Video Player -----------------------------------------------
         Container(
