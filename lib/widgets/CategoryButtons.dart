@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app_nsbm/models/TabScreens.dart';
-import 'package:food_recipe_app_nsbm/screens/Test.dart';
-import 'package:food_recipe_app_nsbm/widgets/FoodItemRow.dart';
 import '../constans.dart';
 
 const List<String> categories = [

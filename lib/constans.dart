@@ -16,9 +16,9 @@ TextStyle appBarStyle = const TextStyle(
 
 final List<String> imgList = [
   "assets/images/greenhome.png",
-  "assets/images/homecover.png",
-  "assets/images/greenhome.png",
-  "assets/images/homecover.png",
+  "assets/images/banner7.png",
+  "assets/images/banner1.png",
+  "assets/images/banner2.png",
   "assets/images/homecover.png",
 ];
 

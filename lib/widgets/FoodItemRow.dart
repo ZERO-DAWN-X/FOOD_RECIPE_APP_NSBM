@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_recipe_app_nsbm/screens/RecipeScreen.dart';
 import 'package:iconsax/iconsax.dart';
 import '../models/FoodItem.dart';
 
@@ -17,7 +18,12 @@ class _FoodItemRowState extends State<FoodItemRow> {
       children: List.generate(
         widget.foods.length,
         (index) => GestureDetector(
-          onTap: () {},
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => RecipeScreen(food: widget.foods[index]),
+            ),
+          ),
           child: Container(
             margin: EdgeInsets.only(right: 15),
             width: 250,
@@ -32,7 +38,7 @@ class _FoodItemRowState extends State<FoodItemRow> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         image: DecorationImage(
-                          image: AssetImage(foods[index].image),
+                          image: AssetImage(widget.foods[index].image),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -74,7 +80,7 @@ class _FoodItemRowState extends State<FoodItemRow> {
                               ),
                               SizedBox(width: 5),
                               Text(
-                                  "${widget.foods[index].rate} (${foods[index].review} reviews)",
+                                  "${widget.foods[index].rate} (${widget.foods[index].review} reviews)",
                                   style: foodStyle.copyWith(
                                     fontSize: 15,
                                     color: Colors.grey,

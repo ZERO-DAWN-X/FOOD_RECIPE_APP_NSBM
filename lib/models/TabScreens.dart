@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:food_recipe_app_nsbm/screens/Test.dart';
 import 'package:food_recipe_app_nsbm/widgets/FoodItemRow.dart';
 
 import 'FoodItem.dart';
 
 List<Widget> generateTabscreens(List<Food> foods) {
   return [
-    Test(),
     FoodItemRow(foods: foods),
-    Test(),
+    FoodItemRow(foods: foods1),
     FoodItemRow(foods: foods),
-    Test(),
-    FoodItemRow(foods: foods)
+    FoodItemRow(foods: foods1),
+    FoodItemRow(foods: foods),
+    FoodItemRow(foods: foods1)
   ];
 }
 
