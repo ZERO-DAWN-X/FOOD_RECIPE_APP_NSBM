@@ -75,7 +75,7 @@ We welcome contributions from the community! Feel free to:
    ```bash
    flutter run
 
-# Praveen Kavindu 
+# Hi i'm PRAVEEN KAVINDU
 
 [![Portfolio Website](https://img.shields.io/badge/portfolio-website-blue?logo=)](https://your-portfolio-website.com) 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin)](https://www.linkedin.com/in/your-linkedin-profile)
@@ -90,31 +90,29 @@ We welcome contributions from the community! Feel free to:
 * **Game Development:** (Specify engines/frameworks if applicable)
 * **Graphic Design & UI/UX**
 
-## Other Common Github Profile Sections
 
 **👩‍💻 I'm currently working on...**
-*  *Project Name 1:* (Brief description & link to repo)
-*  *Project Name 2:* (Brief description & link to repo)
+*  *INFINITE DEAD-LOOP:* (Unity Based Game)
 
 **🧠 I'm currently learning...**
-*  *Technology/Framework/Language 1*
-*  *Technology/Framework/Language 2*
+*  *AI Language*
+*  *Figma Design*
 
 **👯‍♀️ I'm looking to collaborate on...**
-* Open-source projects related to (your interests)
+* Open-source projects related to (Gemini AI)
 * Game development or app development endeavors 
 
 **🤔 I'm looking for help with...**
-*  *Mentorship in (specific area)*
-*  *Advice on refining my (specific skill)*
+*  *Mentorship in Plymouth Uni*
+*  *Advice on refining my Flutter Framework*
 
 **💬 Ask me about...**
 * Web development, Flutter, UI/UX, or my experience at Plymouth University
 
 **📫 How to reach me...**
-your-professional-email@example.com
+* praveenkavindu177777@gmail.com
 
-**😄 Pronouns:** He/Him
+**😄 Pronouns:** PRO
 
 **⚡️ Fun fact:** I'm an avid [hobby or interest outside of tech]! 
 
