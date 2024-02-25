@@ -18,11 +18,12 @@ Discover delicious and healthy recipes with Green Foodie, your personal recipe c
 **Screenshots**
 
 * **Home Screen**
-   [Image of Home Screen]
+[![Build Status](./Screenshots/appshot.jpg)]
+ 
 * **Recipe Detail**
-   [Image of Recipe Detail Screen]
+[![Build Status](./Screenshots/appshot2.jpg)]
 * **Meal Planner**
-   [Image of Meal Planner Screen]
+[![Build Status](./Screenshots/appshot3.jpg)]
 
 
 **Usage**
