@@ -1,4 +1,4 @@
-# FOOD RECIPE APP NSBM  🌱
+# FOOD RECIPES APP NSBM  🌱
 
 [![Flutter](https://img.shields.io/badge/Built%20With-Flutter-blue?logo=flutter)](https://flutter.dev/)
 
