@@ -74,3 +74,55 @@ We welcome contributions from the community! Feel free to:
 3. Run the app:
    ```bash
    flutter run
+
+# Praveen Kavindu 
+
+[![Portfolio Website](https://img.shields.io/badge/portfolio-website-blue?logo=)](https://your-portfolio-website.com) 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin)](https://www.linkedin.com/in/your-linkedin-profile)
+
+**Passionate Software Engineer student at Plymouth University, driven by a love for coding, design, and technology.**
+
+**🛠 Skills:**
+
+* **Coding:** Java, HTML, C#, Flutter, React, Next.js
+* **Web Development:** Frontend, Backend 
+* **App Development:** Flutter (Cross-platform) 
+* **Game Development:** (Specify engines/frameworks if applicable)
+* **Graphic Design & UI/UX**
+
+## Other Common Github Profile Sections
+
+**👩‍💻 I'm currently working on...**
+*  *Project Name 1:* (Brief description & link to repo)
+*  *Project Name 2:* (Brief description & link to repo)
+
+**🧠 I'm currently learning...**
+*  *Technology/Framework/Language 1*
+*  *Technology/Framework/Language 2*
+
+**👯‍♀️ I'm looking to collaborate on...**
+* Open-source projects related to (your interests)
+* Game development or app development endeavors 
+
+**🤔 I'm looking for help with...**
+*  *Mentorship in (specific area)*
+*  *Advice on refining my (specific skill)*
+
+**💬 Ask me about...**
+* Web development, Flutter, UI/UX, or my experience at Plymouth University
+
+**📫 How to reach me...**
+your-professional-email@example.com
+
+**😄 Pronouns:** He/Him
+
+**⚡️ Fun fact:** I'm an avid [hobby or interest outside of tech]! 
+
+
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://katherineoelsner.com/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/)
+
+![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+
