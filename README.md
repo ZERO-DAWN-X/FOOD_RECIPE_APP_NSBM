@@ -18,6 +18,8 @@ Discover delicious and healthy recipes with Green Foodie, your personal recipe c
 **Screenshots**
 
 * **Home Screen**
+
+
 [![Build Status](./Screenshots/appshot.jpg)]
  
 * **Recipe Detail**
