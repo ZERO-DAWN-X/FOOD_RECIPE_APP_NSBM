@@ -1,4 +1,4 @@
-# FOOD RECIPE APP NSBM  🌱
+# FOOD RECIPES APP NSBM  🌱
 
 [![Flutter](https://img.shields.io/badge/Built%20With-Flutter-blue?logo=flutter)](https://flutter.dev/)
 
@@ -18,11 +18,14 @@ Discover delicious and healthy recipes with Green Foodie, your personal recipe c
 **Screenshots**
 
 * **Home Screen**
-   [Image of Home Screen]
+
+
+[![Build Status](./Screenshots/appshot.jpg)]
+ 
 * **Recipe Detail**
-   [Image of Recipe Detail Screen]
+[![Build Status](./Screenshots/appshot2.jpg)]
 * **Meal Planner**
-   [Image of Meal Planner Screen]
+[![Build Status](./Screenshots/appshot3.jpg)]
 
 
 **Usage**
@@ -71,3 +74,49 @@ We welcome contributions from the community! Feel free to:
 3. Run the app:
    ```bash
    flutter run
+
+# Hi i'm PRAVEEN KAVINDU
+
+[![Portfolio Website](https://img.shields.io/badge/portfolio-website-blue?logo=)](https://your-portfolio-website.com) 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin)](https://www.linkedin.com/in/your-linkedin-profile)
+
+**Passionate Software Engineer student at Plymouth University, driven by a love for coding, design, and technology.**
+
+**🛠 Skills:**
+
+* **Coding:** Java, HTML, C#, Flutter, React, Next.js
+* **Web Development:** Frontend, Backend 
+* **App Development:** Flutter (Cross-platform) 
+* **Game Development:** (Specify engines/frameworks if applicable)
+* **Graphic Design & UI/UX**
+
+
+**👩‍💻 I'm currently working on...**
+*  *INFINITE DEAD-LOOP:* (Unity Based Game)
+
+**🧠 I'm currently learning...**
+*  *AI Language*
+*  *Figma Design*
+
+**👯‍♀️ I'm looking to collaborate on...**
+* Open-source projects related to (Gemini AI)
+* Game development or app development endeavors 
+
+**🤔 I'm looking for help with...**
+*  *Mentorship in Plymouth Uni*
+*  *Advice on refining my Flutter Framework*
+
+**💬 Ask me about...**
+* Web development, Flutter, UI/UX, or my experience at Plymouth University
+
+**📫 How to reach me...**
+* praveenkavindu177777@gmail.com
+
+**😄 Pronouns:** PRO
+
+**⚡️ Fun fact:** I'm an avid [hobby or interest outside of tech]! 
+
+
+
+![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+
