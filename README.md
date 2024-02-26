@@ -1,5 +1,9 @@
 # FOOD RECIPES APP NSBM  🌱
 
+![Logo](./Screenshots/MY_LOGO.png)
+
+
+
 [![Flutter](https://img.shields.io/badge/Built%20With-Flutter-blue?logo=flutter)](https://flutter.dev/)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -118,5 +122,4 @@ We welcome contributions from the community! Feel free to:
 
 
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
-
+![Logo](./Screenshots/MY_LOGO.png)
