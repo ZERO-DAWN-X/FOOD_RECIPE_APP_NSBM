@@ -1,4 +1,4 @@
-# FOOD RECIPES APP NSBM  🌱
+# FOOD RECIPES APP NSBM  🥗
 
 
 ![Logo](./Screenshots/app3.png)
