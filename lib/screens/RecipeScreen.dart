@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app_nsbm/models/FoodItem.dart';
-import 'package:food_recipe_app_nsbm/models/FoodItem.dart';
 import 'package:iconsax/iconsax.dart';
 
 class RecipeScreen extends StatefulWidget {

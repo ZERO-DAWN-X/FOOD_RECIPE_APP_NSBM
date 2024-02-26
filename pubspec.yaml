@@ -7,8 +7,10 @@ environment:
   sdk: ">=3.2.6 <4.0.0"
 
 dependencies:
+  animated_native_splash: ^1.3.0
+  animated_splash_screen: ^1.3.0
   carousel_slider: ^4.2.1
-  chewie: ^1.7.5
+  chewie: 1.5.0
   flutter:
     sdk: flutter
   iconsax: ^0.0.8

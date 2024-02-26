@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_recipe_app_nsbm/LoadingScreen.dart';
 import 'screens/HomePage.dart';
 
 void main() {
@@ -12,7 +13,8 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: LoadingScreen(),
+      // home: HomePage(),
     );
   }
 }
