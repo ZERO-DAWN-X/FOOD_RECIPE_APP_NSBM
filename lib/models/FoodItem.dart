@@ -21,7 +21,7 @@ class Food {
 List<Food> foods = [
   Food(
     name: "Rice",
-    image: "assets/images/1.png",
+    image: "assets/images/123.png",
     time: 30,
     rate: 4.5,
     review: 20,

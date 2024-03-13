@@ -15,8 +15,8 @@ class LoadingScreen extends StatelessWidget {
         children: [
           AnimatedSplashScreen(
             splash: "assets/images/Green.png",
-            duration: 30000,
-            splashIconSize: 300.0,
+            duration: 2000,
+            splashIconSize: 210.0,
             nextScreen: HomePage(),
             splashTransition: SplashTransition.fadeTransition,
           )
