@@ -29,7 +29,7 @@ Discover delicious and healthy recipes with Green Foodie, your personal recipe c
 
 **Screenshots**
 
-* **LOading Screen**
+* **Loading Screen**
 
 [![Build Status](./Screenshots/Loading_Screen.png)]
 
