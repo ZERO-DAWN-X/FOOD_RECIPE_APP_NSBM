@@ -32,7 +32,7 @@ Discover delicious and healthy recipes with Green Foodie, your personal recipe c
 * **Home Screen**
 
 
-[![Build Status](./Screenshots/appshot.jpg)]
+[![Build Status](./Screenshots/Home_Page.png.jpg)]
  
 * **Recipe Detail**
 [![Build Status](./Screenshots/appshot2.jpg)]
