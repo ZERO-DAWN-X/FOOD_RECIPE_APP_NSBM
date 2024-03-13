@@ -29,14 +29,28 @@ Discover delicious and healthy recipes with Green Foodie, your personal recipe c
 
 **Screenshots**
 
+* **Loading Screen**
+
+[![Build Status](./Screenshots/Loading_Screen.png)]
+
+* **Sign UP Screen**
+
+[![Build Status](./Screenshots/RegisterPage.png)]
+
+* **Sign in Screen**
+
+[![Build Status](./Screenshots/LoginPage.png)]
+
 * **Home Screen**
 
-
-[![Build Status](./Screenshots/appshot.jpg)]
+[![Build Status](./Screenshots/Home_Page.png)]
  
 * **Recipe Detail**
-[![Build Status](./Screenshots/appshot2.jpg)]
+
+[![Build Status](./Screenshots/Recipe_Details.png)]
+
 * **Meal Planner**
+
 [![Build Status](./Screenshots/appshot3.jpg)]
 
 
