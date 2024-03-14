@@ -14,13 +14,20 @@ dependencies:
   flutter:
     sdk: flutter
   iconsax: ^0.0.8
+  cupertino_icons: ^1.0.2
+  firebase_core: ^2.27.1
+  firebase_auth: ^4.17.9
+  web: ^0.5.1
+  provider: ^6.1.1
+  google_fonts: ^6.1.0
   video_player: ^2.8.2
-  youtube_player_flutter: ^8.0.0
+  loading_animation_widget: ^1.2.0+4
+  youtube_player_flutter: ^9.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
 
 flutter:
   uses-material-design: true
@@ -28,3 +35,20 @@ flutter:
   assets:
     - assets/images/greenhome.png
     - assets/images/
+    - assets/images/LS.png
+    - assets/images/b6.png
+    - assets/images/fb.png
+    - assets/images/google.png
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Bold.ttf
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+        - asset: assets/fonts/Poppins-Light.ttf
+        - asset: assets/fonts/Poppins-Medium.ttf
+
+    - family: Anurati
+      fonts:
+        - asset: assets/fonts/Anurati-Regular.otf

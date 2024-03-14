@@ -1,3 +1,4 @@
 {
-  "java.compile.nullAnalysis.mode": "automatic"
+  "java.compile.nullAnalysis.mode": "automatic",
+  "cmake.sourceDirectory": "C:/Flutter Apps/food_recipe_app_nsbm/build/windows/x64/extracted/firebase_cpp_sdk_windows"
 }

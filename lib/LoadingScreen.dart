@@ -1,6 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:food_recipe_app_nsbm/screens/HomePage.dart';
+import 'package:food_recipe_app_nsbm/mainLOG.dart';
 
 class LoadingScreen extends StatelessWidget {
   const LoadingScreen({super.key});
@@ -10,18 +10,47 @@ class LoadingScreen extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          body: Stack(
-        fit: StackFit.expand,
-        children: [
-          AnimatedSplashScreen(
-            splash: "assets/images/Green.png",
-            duration: 2000,
-            splashIconSize: 210.0,
-            nextScreen: HomePage(),
-            splashTransition: SplashTransition.fadeTransition,
-          )
-        ],
-      )),
+        body: Stack(
+          fit: StackFit.expand,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/LS1.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    width: double.infinity,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: AnimatedSplashScreen(
+                            splash: "assets/images/LG.png",
+                            duration: 2000,
+                            nextScreen: MainLog(),
+                            splashIconSize: MediaQuery.of(context).size.width *
+                                0.2, // adjust the size of the splash icon here
+                            splashTransition: SplashTransition.fadeTransition,
+                            backgroundColor: Colors.transparent,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

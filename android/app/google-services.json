@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "447963300313",
+    "project_id": "nsbm-food-app",
+    "storage_bucket": "nsbm-food-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447963300313:android:5429bfd24b2d49908c99c8",
+        "android_client_info": {
+          "package_name": "com.example.food_recipe_app_nsbm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMXOk4jlmp7MIkCgDfPZut1dBh0KnOBvs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
