@@ -36,11 +36,79 @@ class _SignInPageState extends State<SignInPage> {
           child: Column(
             children: [
               Container(
-                height: 350,
+                height: 380,
                 decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
+                      bottomRight: Radius.circular(140)),
                   image: DecorationImage(
                       image: const AssetImage('assets/images/b5.png'),
                       fit: BoxFit.cover),
+                ),
+                child: Stack(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(0),
+                            bottomRight: Radius.circular(140)),
+                        color: Colors.black.withOpacity(0.5),
+                      ),
+                    ),
+                    Container(
+                      child: Positioned(
+                        top: 50,
+                        right: 20,
+                        child: Container(
+                          width: 80,
+                          height: 30,
+                          child: ElevatedButton(
+                            onPressed: () async {
+                              dynamic result = await _auth.signInAnonymously();
+                              if (result == null) {
+                                print("Error Signing In");
+                              } else {
+                                print("Signed In");
+                                print(result.uid);
+                              }
+                            },
+                            child: const Center(
+                              child: Text(
+                                "Skip",
+                                style: TextStyle(
+                                    color: Color(0xfffFF3D00),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.only(top: 130, left: 30),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Welcome Back",
+                            style: GoogleFonts.poppins(
+                              fontSize: 30,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            "Sign in to continue",
+                            style: GoogleFonts.poppins(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Container(
@@ -48,17 +116,31 @@ class _SignInPageState extends State<SignInPage> {
                 child: Column(
                   children: [
                     SizedBox(
-                      height: 10,
+                      height: 15,
                     ),
-                    Text(
-                      'Login',
-                      style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.w700,
-                          fontFamily: "poppins"),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Login',
+                          style: TextStyle(
+                              color: Color(0xfffFF3D00),
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: "poppins"),
+                        ),
+                        Text(
+                          " Cooking",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 32,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: "poppins"),
+                        )
+                      ],
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                     Form(
                       key: _formKey, // Validation
@@ -77,7 +159,7 @@ class _SignInPageState extends State<SignInPage> {
                             height: 7,
                           ),
                           SizedBox(
-                            height: 40,
+                            height: 45,
                             width: 340,
                             child: TextFormField(
                                 validator: (value) => value!.isEmpty == true
@@ -96,7 +178,7 @@ class _SignInPageState extends State<SignInPage> {
                             height: 20,
                           ),
                           SizedBox(
-                            height: 40,
+                            height: 45,
                             width: 340,
                             child: TextFormField(
                               validator: (value) => value!.isEmpty == true
@@ -137,7 +219,7 @@ class _SignInPageState extends State<SignInPage> {
                             ),
                           ),
                           const SizedBox(
-                            height: 10,
+                            height: 15,
                           ),
                           Text(
                             "Forgot Password?",
@@ -148,7 +230,7 @@ class _SignInPageState extends State<SignInPage> {
                             ),
                           ),
                           const SizedBox(
-                            height: 8,
+                            height: 15,
                           ),
                           const SizedBox(
                             height: 10,
@@ -195,7 +277,7 @@ class _SignInPageState extends State<SignInPage> {
                                     height: 33,
                                   )),
                               const SizedBox(
-                                width: 13,
+                                width: 15,
                               ),
                               GestureDetector(
                                 onTap: () {},
@@ -207,7 +289,7 @@ class _SignInPageState extends State<SignInPage> {
                             ],
                           ),
                           SizedBox(
-                            height: 20,
+                            height: 40,
                           ),
                           GestureDetector(
                             onTap: () async {
@@ -221,14 +303,18 @@ class _SignInPageState extends State<SignInPage> {
                               }
                             },
                             child: Container(
-                              height: 40,
-                              width: 320,
+                              height: 45,
+                              width: 340,
                               decoration: LogBtn,
                               // border: Border.all(width: 2,color: Color(0xfff1976D2))
 
                               child: Center(
-                                  child: Text("SIGN IN", style: LogBtnStyle)),
+                                child: Text("SIGN IN", style: LogBtnStyle),
+                              ),
                             ),
+                          ),
+                          SizedBox(
+                            height: 30,
                           ),
                         ],
                       ),

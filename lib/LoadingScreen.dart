@@ -16,7 +16,7 @@ class LoadingScreen extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("assets/images/LS1.png"),
+                  image: AssetImage("assets/images/177.jpg"),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -34,10 +34,10 @@ class LoadingScreen extends StatelessWidget {
                         Expanded(
                           child: AnimatedSplashScreen(
                             splash: "assets/images/LG.png",
-                            duration: 2000,
+                            duration: 200000,
                             nextScreen: MainLog(),
                             splashIconSize: MediaQuery.of(context).size.width *
-                                0.2, // adjust the size of the splash icon here
+                                0.19, // adjust the size of the splash icon here
                             splashTransition: SplashTransition.fadeTransition,
                             backgroundColor: Colors.transparent,
                           ),

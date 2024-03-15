@@ -8,7 +8,7 @@ DecorationImage bgImage = DecorationImage(
 );
 
 const InputDecoration textField_Decoration = InputDecoration(
-  contentPadding: EdgeInsets.all(12),
+  contentPadding: EdgeInsets.all(15),
   hintText: "Enter email",
   hintStyle: TextStyle(
       color: Color.fromARGB(255, 179, 179, 179),
