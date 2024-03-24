@@ -26,7 +26,7 @@ class _FoodItemRowState extends State<FoodItemRow> {
           ),
           child: Container(
             margin: EdgeInsets.only(right: 15),
-            width: 250,
+            width: 260,
             child: Stack(
               children: [
                 Column(
@@ -34,7 +34,7 @@ class _FoodItemRowState extends State<FoodItemRow> {
                   children: [
                     Container(
                       width: double.infinity,
-                      height: 160,
+                      height: 150,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         image: DecorationImage(
@@ -43,51 +43,53 @@ class _FoodItemRowState extends State<FoodItemRow> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 5),
                     Text(
                       widget.foods[index].name,
                       style: foodStyle.copyWith(
-                        fontSize: 18,
-                      ),
+                          fontSize: 15, fontWeight: FontWeight.w500),
                     ),
                     SizedBox(height: 2),
                     Padding(
                       padding: const EdgeInsets.only(left: 1, right: 1),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              Icon(
-                                Iconsax.clock,
-                                color: Colors.grey,
-                                size: 17,
-                              ),
-                              SizedBox(width: 7),
-                              Text("${widget.foods[index].time} min",
-                                  style: foodStyle.copyWith(
-                                    fontSize: 15,
-                                    color: Colors.grey,
-                                  )),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                Iconsax.medal_star5,
-                                color: Color.fromARGB(255, 24, 141, 20),
-                                size: 17,
-                              ),
-                              SizedBox(width: 5),
-                              Text(
-                                  "${widget.foods[index].rate} (${widget.foods[index].review} reviews)",
-                                  style: foodStyle.copyWith(
-                                    fontSize: 15,
-                                    color: Colors.grey,
-                                  )),
-                            ],
-                          ),
-                        ],
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            Row(
+                              children: [
+                                Icon(
+                                  Iconsax.clock,
+                                  color: Colors.grey,
+                                  size: 16,
+                                ),
+                                SizedBox(width: 7),
+                                Text("${widget.foods[index].time} min",
+                                    style: foodStyle.copyWith(
+                                      fontSize: 14,
+                                      color: Colors.grey,
+                                    )),
+                              ],
+                            ),
+                            SizedBox(width: 20),
+                            Row(
+                              children: [
+                                Icon(
+                                  Iconsax.medal_star5,
+                                  color: Color.fromARGB(255, 24, 141, 20),
+                                  size: 17,
+                                ),
+                                SizedBox(width: 5),
+                                Text(
+                                    "${widget.foods[index].rate} (${widget.foods[index].review} reviews)",
+                                    style: foodStyle.copyWith(
+                                      fontSize: 14,
+                                      color: Colors.grey,
+                                    )),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     )
                   ],

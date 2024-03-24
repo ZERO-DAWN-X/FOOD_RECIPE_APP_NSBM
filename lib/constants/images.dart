@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 DecorationImage bgImage = DecorationImage(
   image: const AssetImage("assets/images/3.jpg"),
@@ -28,11 +29,12 @@ const InputDecoration textField_Decoration = InputDecoration(
 );
 
 GestureDetector SocialIcon = GestureDetector(
-    onTap: () {},
-    child: Image.asset(
-      "assets/images/google.png",
-      height: 43,
-    ));
+  onTap: () {},
+  child: Image.asset(
+    "assets/images/google.png",
+    height: 43,
+  ),
+);
 
 BoxDecoration LogBtn = BoxDecoration(
   color: const Color(0xfffFF3D00),
@@ -44,3 +46,17 @@ TextStyle LogBtnStyle = const TextStyle(
     fontSize: 15,
     fontWeight: FontWeight.w600,
     color: Colors.white);
+
+// -------------------------------------------  Social Media Styles  ---------------------------------------------
+
+BoxDecoration SocialMediaDECORATION = BoxDecoration(
+  borderRadius: BorderRadius.circular(100),
+  color: Color.fromARGB(255, 252, 34, 136),
+);
+
+TextStyle SocialMediaTEXT = TextStyle(
+  fontSize: 10,
+  fontWeight: FontWeight.w600,
+  fontFamily: 'Poppins',
+  color: Color(0xfffFF3D00),
+);

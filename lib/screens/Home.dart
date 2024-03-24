@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_recipe_app_nsbm/models/TopRecipes.dart';
 import 'package:food_recipe_app_nsbm/widgets/CategoryButtons.dart';
 import 'package:food_recipe_app_nsbm/widgets/HomeSearchBar.dart';
+import 'package:food_recipe_app_nsbm/widgets/Top_Recipes.dart';
 import '../widgets/CategoryItems.dart';
 import '../widgets/HomeAppbar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -55,6 +57,19 @@ class _HomeState extends State<Home> {
                           ))
                       .toList(),
                 ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  "Top Recipes",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                TopRecipes(
+                  topStatus: Status,
+                ),
                 SizedBox(height: 20),
                 Text(
                   "Categories",
@@ -66,7 +81,7 @@ class _HomeState extends State<Home> {
                 SizedBox(height: 20),
                 CategoryButtons(),
                 SizedBox(height: 20),
-                CategoryItems(),
+                // CategoryItems(),
               ],
             ),
           ),

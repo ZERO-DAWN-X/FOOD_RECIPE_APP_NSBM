@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app_nsbm/screens/authentication/SignInPage.dart';
-import 'register.dart';
-import 'signin.dart';
+import 'package:food_recipe_app_nsbm/screens/authentication/SignUpPage.dart';
 
 class Authenticate extends StatefulWidget {
   const Authenticate({super.key});
@@ -26,7 +25,7 @@ class _AuthenticateState extends State<Authenticate> {
     if (signinpage == true) {
       return SignInPage(toggleView: swichPages);
     } else {
-      return Register(toggleView: swichPages);
+      return SignUpPage(toggleView: swichPages);
       
     }
   }

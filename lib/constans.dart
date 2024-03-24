@@ -16,10 +16,10 @@ TextStyle appBarStyle = const TextStyle(
 
 final List<String> imgList = [
   "assets/images/b1.png",
-  "assets/images/banner7.png",
+  "assets/images/banner4.png",
   "assets/images/banner1.png",
   "assets/images/banner2.png",
-  "assets/images/b1.png",
+  "assets/images/banner3.png",
 ];
 
 // -------------------------------------------  Carousel Slider  ---------------------------------------------

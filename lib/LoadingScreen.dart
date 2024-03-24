@@ -14,12 +14,12 @@ class LoadingScreen extends StatelessWidget {
           fit: StackFit.expand,
           children: [
             Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/images/177.jpg"),
-                  fit: BoxFit.cover,
-                ),
-              ),
+              decoration: BoxDecoration(color: Color(0xfffFF3D00)
+                  // image: DecorationImage(
+                  //   image: AssetImage("assets/images/L2.jpg"),
+                  //   fit: BoxFit.cover,
+                  // ),
+                  ),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -34,10 +34,10 @@ class LoadingScreen extends StatelessWidget {
                         Expanded(
                           child: AnimatedSplashScreen(
                             splash: "assets/images/LG.png",
-                            duration: 200000,
+                            duration: 2000,
                             nextScreen: MainLog(),
                             splashIconSize: MediaQuery.of(context).size.width *
-                                0.19, // adjust the size of the splash icon here
+                                0.18, // adjust the size of the splash icon here
                             splashTransition: SplashTransition.fadeTransition,
                             backgroundColor: Colors.transparent,
                           ),

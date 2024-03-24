@@ -1,29 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app_nsbm/services/auth.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import '../../constants/images.dart';
 
-class SignInPage extends StatefulWidget {
-  //Funtion
+class SignUpPage extends StatefulWidget {
+  //funtion
   final Function toggleView;
-  //Constructor
-  const SignInPage({required this.toggleView, super.key});
+  const SignUpPage({super.key, required this.toggleView});
 
   @override
-  State<SignInPage> createState() => _SignInPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _SignInPageState extends State<SignInPage> {
+class _SignUpPageState extends State<SignUpPage> {
   bool _obscureText = true; // Initially hide password text
 
   //ref for the AuthService Class
   final AuthServices _auth = AuthServices();
 
   //Form Key
-
   final _formKey = GlobalKey<FormState>();
 
-  //Email Password States
+  //Variables to store values from
   String email = "";
   String password = "";
   String error = "";
@@ -36,12 +35,12 @@ class _SignInPageState extends State<SignInPage> {
           child: Column(
             children: [
               Container(
-                height: 340,
+                height: 300,
                 decoration: BoxDecoration(
                   borderRadius: const BorderRadius.only(
                       bottomRight: Radius.circular(140)),
                   image: DecorationImage(
-                      image: const AssetImage('assets/images/b5.png'),
+                      image: const AssetImage('assets/images/b6.png'),
                       fit: BoxFit.cover),
                 ),
                 child: Stack(
@@ -90,15 +89,15 @@ class _SignInPageState extends State<SignInPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Welcome Back",
+                            "New Recipes",
                             style: GoogleFonts.poppins(
-                              fontSize: 30,
+                              fontSize: 35,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
                             ),
                           ),
                           Text(
-                            "Sign in to continue",
+                            "Register to continue",
                             style: GoogleFonts.poppins(
                               fontSize: 15,
                               fontWeight: FontWeight.w500,
@@ -122,7 +121,7 @@ class _SignInPageState extends State<SignInPage> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          'Login',
+                          'Register',
                           style: TextStyle(
                               color: Color(0xfffFF3D00),
                               fontSize: 32,
@@ -140,7 +139,7 @@ class _SignInPageState extends State<SignInPage> {
                       ],
                     ),
                     const SizedBox(
-                      height: 15,
+                      height: 10,
                     ),
                     Form(
                       key: _formKey, // Validation
@@ -181,8 +180,8 @@ class _SignInPageState extends State<SignInPage> {
                             height: 45,
                             width: 340,
                             child: TextFormField(
-                              validator: (value) => value!.isEmpty == true
-                                  ? "Enter Password"
+                              validator: (value) => value!.length < 6
+                                  ? "Enter Password 6 charactors long."
                                   : null,
                               style: const TextStyle(
                                   color: Colors.black, fontSize: 14),
@@ -195,6 +194,50 @@ class _SignInPageState extends State<SignInPage> {
                                   _obscureText, // Toggle password visibility
                               decoration: textField_Decoration.copyWith(
                                 hintText: "Enter password",
+                                suffixIcon: Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 5),
+                                  child: IconButton(
+                                    icon: Icon(
+                                      size: 21,
+                                      _obscureText
+                                          ? Icons.visibility
+                                          : Icons.visibility_off,
+                                      color: const Color.fromARGB(
+                                          255, 194, 194, 194),
+                                    ),
+                                    onPressed: () {
+                                      setState(() {
+                                        _obscureText =
+                                            !_obscureText; // Toggle password visibility
+                                      });
+                                    },
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          SizedBox(
+                            height: 45,
+                            width: 340,
+                            child: TextFormField(
+                              validator: (value) => value!.length < 6
+                                  ? "Enter Password 6 charactors long."
+                                  : null,
+                              style: const TextStyle(
+                                  color: Colors.black, fontSize: 14),
+                              onChanged: (value) {
+                                setState(() {
+                                  password = value;
+                                });
+                              },
+                              obscureText:
+                                  _obscureText, // Toggle password visibility
+                              decoration: textField_Decoration.copyWith(
+                                hintText: "Re enter password",
                                 suffixIcon: Padding(
                                   padding:
                                       const EdgeInsets.symmetric(horizontal: 5),
@@ -236,7 +279,7 @@ class _SignInPageState extends State<SignInPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               const Text(
-                                "Login With Social Media Or  ",
+                                "If You Have Account  ",
                                 style: TextStyle(
                                     fontFamily: "poppins",
                                     fontSize: 12,
@@ -250,7 +293,7 @@ class _SignInPageState extends State<SignInPage> {
                                     widget.toggleView();
                                   },
                                   child: const Text(
-                                    "REGISTER",
+                                    "LOGIN",
                                     style: TextStyle(
                                         fontFamily: "poppins",
                                         fontSize: 13,
@@ -286,16 +329,18 @@ class _SignInPageState extends State<SignInPage> {
                             ],
                           ),
                           SizedBox(
-                            height: 40,
+                            height: 30,
                           ),
                           GestureDetector(
                             onTap: () async {
-                              dynamic result = await _auth
-                                  .signInWithEmailAndPassword(email, password);
+                              dynamic result =
+                                  await _auth.registerWithEmailAndPassword(
+                                      email, password);
 
                               if (result == null) {
                                 setState(() {
-                                  error = "Invalid Email or Password";
+                                  error =
+                                      "Please enter valid email and password.";
                                 });
                               }
                             },
@@ -306,7 +351,8 @@ class _SignInPageState extends State<SignInPage> {
                               // border: Border.all(width: 2,color: Color(0xfff1976D2))
 
                               child: Center(
-                                child: Text("SIGN IN", style: LogBtnStyle),
+                                child:
+                                    Text("CREATE ACCOUNT", style: LogBtnStyle),
                               ),
                             ),
                           ),

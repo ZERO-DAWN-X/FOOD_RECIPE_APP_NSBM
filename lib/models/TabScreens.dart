@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:food_recipe_app_nsbm/models/Chef.dart';
+import 'package:food_recipe_app_nsbm/widgets/ChefDetails.dart';
 import 'package:food_recipe_app_nsbm/widgets/FoodItemRow.dart';
 
 import 'FoodItem.dart';
@@ -25,3 +28,12 @@ List<Widget> Tabscreens2 = generateTabscreens(foods1);
 //   Test(),
 //   FoodItemRow(foods: foods)
 // ];
+
+List<Widget> ChefTab = [
+  ChefDetails(chefs: chefs),
+  Text("gggg"),
+  Text("data"),
+  ChefDetails(chefs: chefs),
+  ChefDetails(chefs: chefs),
+  ChefDetails(chefs: chefs),
+];

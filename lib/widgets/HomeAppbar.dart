@@ -20,8 +20,8 @@ class _HomeAppbarState extends State<HomeAppbar> {
         Text("What are you\ncooking today ?",
             style: TextStyle(
               fontFamily: "poppins",
-              fontWeight: FontWeight.bold,
-              fontSize: 35,
+              fontWeight: FontWeight.w700,
+              fontSize: 30,
               height: 1,
             )),
         const Spacer(),
@@ -41,7 +41,7 @@ class _HomeAppbarState extends State<HomeAppbar> {
         //   )
 
         IconButton(
-          onPressed: () async{
+          onPressed: () async {
             await _auth.signOut();
           },
           style: IconButton.styleFrom(

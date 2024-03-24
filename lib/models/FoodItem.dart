@@ -21,7 +21,7 @@ class Food {
 List<Food> foods = [
   Food(
     name: "Rice",
-    image: "assets/images/123.png",
+    image: "assets/images/F3.jpg",
     time: 30,
     rate: 4.5,
     review: 20,
@@ -29,7 +29,7 @@ List<Food> foods = [
   ),
   Food(
     name: "Banana",
-    image: "assets/images/2.png",
+    image: "assets/images/F2.jpg",
     time: 20,
     rate: 4.0,
     review: 15,
@@ -37,7 +37,7 @@ List<Food> foods = [
   ),
   Food(
     name: "Fried Chicken",
-    image: "assets/images/3.png",
+    image: "assets/images/F1.jpg",
     time: 25,
     rate: 4.2,
     review: 18,
@@ -45,7 +45,7 @@ List<Food> foods = [
   ),
   Food(
     name: "Grilled Beef",
-    image: "assets/images/4.png",
+    image: "assets/images/2.png",
     time: 35,
     rate: 4.7,
     review: 25,
@@ -53,7 +53,7 @@ List<Food> foods = [
   ),
   Food(
     name: "Grilled Chicken",
-    image: "assets/images/1.png",
+    image: "assets/images/F1.jpg",
     time: 30,
     rate: 4.5,
     review: 20,
@@ -61,7 +61,7 @@ List<Food> foods = [
   ),
   Food(
     name: "Fried Egg",
-    image: "assets/images/2.png",
+    image: "assets/images/F2.jpg",
     time: 20,
     rate: 4.0,
     review: 15,
@@ -69,7 +69,7 @@ List<Food> foods = [
   ),
   Food(
     name: "Fried Chicken",
-    image: "assets/images/3.png",
+    image: "assets/images/F3.jpg",
     time: 25,
     rate: 4.2,
     review: 18,
@@ -77,7 +77,7 @@ List<Food> foods = [
   ),
   Food(
     name: "Grilled Beef",
-    image: "assets/images/4.png",
+    image: "assets/images/2.png",
     time: 35,
     rate: 4.7,
     review: 25,
@@ -93,7 +93,7 @@ TextStyle foodStyle = TextStyle(
 List<Food> foods1 = [
   Food(
     name: "Grilled banana",
-    image: "assets/images/2.png",
+    image: "assets/images/F2.jpg",
     time: 30,
     rate: 4.5,
     review: 20,
@@ -101,7 +101,7 @@ List<Food> foods1 = [
   ),
   Food(
     name: "Fried Egg",
-    image: "assets/images/3.png",
+    image: "assets/images/F1.jpg",
     time: 20,
     rate: 4.0,
     review: 15,
@@ -117,7 +117,7 @@ List<Food> foods1 = [
   ),
   Food(
     name: "Grilled Beef",
-    image: "assets/images/1.png",
+    image: "assets/images/F3.jpg",
     time: 35,
     rate: 4.7,
     review: 25,
@@ -125,7 +125,7 @@ List<Food> foods1 = [
   ),
   Food(
     name: "Grilled Chicken",
-    image: "assets/images/4.png",
+    image: "assets/images/F1.jpg",
     time: 30,
     rate: 4.5,
     review: 20,
@@ -133,7 +133,7 @@ List<Food> foods1 = [
   ),
   Food(
     name: "Fried Egg",
-    image: "assets/images/3.png",
+    image: "assets/images/F2.jpg",
     time: 20,
     rate: 4.0,
     review: 15,
@@ -149,7 +149,7 @@ List<Food> foods1 = [
   ),
   Food(
     name: "Grilled Beef",
-    image: "assets/images/1.png",
+    image: "assets/images/F3.jpg",
     time: 35,
     rate: 4.7,
     review: 25,

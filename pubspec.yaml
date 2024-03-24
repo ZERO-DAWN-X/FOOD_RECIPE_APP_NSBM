@@ -39,6 +39,7 @@ flutter:
     - assets/images/b6.png
     - assets/images/fb.png
     - assets/images/google.png
+    - assets/images/21.jpg
 
   fonts:
     - family: Poppins

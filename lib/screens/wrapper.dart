@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_recipe_app_nsbm/screens/HomePage.dart';
 import 'package:provider/provider.dart';
 import '../models/UserModel.dart';
-import 'Home.dart';
 import 'authentication/authenticate.dart';
 
 class Wrapper extends StatelessWidget {
@@ -17,7 +17,7 @@ class Wrapper extends StatelessWidget {
       return Authenticate();
     }
     else{
-      return const Home();
+      return const HomePage();
     }
   }
 }
