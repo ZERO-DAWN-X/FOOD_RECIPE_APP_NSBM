@@ -60,3 +60,21 @@ TextStyle SocialMediaTEXT = TextStyle(
   fontFamily: 'Poppins',
   color: Color(0xfffFF3D00),
 );
+
+BoxDecoration SOCIALIndicate = BoxDecoration(
+  borderRadius: BorderRadius.circular(100),
+  color: Colors.black,
+);
+
+TextStyle SOCIALstyle = const TextStyle(
+  fontSize: 10,
+  fontWeight: FontWeight.bold,
+  fontFamily: 'Poppins',
+  color: Colors.white,
+);
+
+TextStyle ChefABOUT = const TextStyle(
+  fontSize: 17,
+  fontWeight: FontWeight.bold,
+  fontFamily: 'Poppins',
+);

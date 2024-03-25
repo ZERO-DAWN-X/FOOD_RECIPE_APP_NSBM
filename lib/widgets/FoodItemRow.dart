@@ -111,7 +111,7 @@ class _FoodItemRowState extends State<FoodItemRow> {
                       backgroundColor: Colors.white,
                       minimumSize: const Size(18, 18),
                     ),
-                    iconSize: 16,
+                    iconSize: 15,
                     icon: Icon(
                       widget.foods[index].isLiked
                           ? Iconsax.heart5
