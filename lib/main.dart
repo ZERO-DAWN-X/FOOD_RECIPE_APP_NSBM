@@ -3,11 +3,11 @@ import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app_nsbm/LoadingScreen.dart';
-import 'package:food_recipe_app_nsbm/screens/authentication/SignInPage.dart';
-import 'package:food_recipe_app_nsbm/screens/wrapper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // FireBase Initialization -------------------------------------------
 
   Platform.isAndroid
       ? await Firebase.initializeApp(
@@ -28,10 +28,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: SignInPage(),
-      // home: Wrapper(),
       home: LoadingScreen(),
-      // home: HomePage(),
     );
   }
 }

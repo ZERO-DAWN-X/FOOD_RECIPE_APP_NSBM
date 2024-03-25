@@ -7,6 +7,8 @@ import 'package:provider/provider.dart';
 import 'models/UserModel.dart';
 import 'services/auth.dart';
 
+// Firebase Initialization -------------------------------------------
+
 void main()async{
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -37,7 +39,6 @@ class MainLog extends StatelessWidget {
     child: const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        // body: Register(),
         body: Wrapper(),
       ),
     ),

@@ -366,11 +366,27 @@ class _RecipeScreenState extends State<RecipeScreen> {
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                         backgroundColor:
-                                            const Color(0xfffff3d00),
+                                            !chefs[selectedChef].isFollowed
+                                                ? const Color(0xfffff3d00)
+                                                : const Color(0xff000000)
+                                                    .withOpacity(.2),
                                       ),
-                                      onPressed: () {},
-                                      child: const Text("FOLLOW",
-                                          style: TextStyle(
+                                      onPressed: () {
+                                        setState(() {
+                                          chefs[selectedChef].isFollowed =
+                                              !chefs[selectedChef].isFollowed;
+                                          chefs[selectedChef].isFollowed
+                                              ? chefs[selectedChef]
+                                                  .FollowersCount += 1
+                                              : chefs[selectedChef]
+                                                  .FollowersCount -= 1;
+                                        });
+                                      },
+                                      child: Text(
+                                          !chefs[selectedChef].isFollowed
+                                              ? "Follow"
+                                              : "Following",
+                                          style: const TextStyle(
                                             fontSize: 10,
                                             fontWeight: FontWeight.w800,
                                             fontFamily: 'Poppins',

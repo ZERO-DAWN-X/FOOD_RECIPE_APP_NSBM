@@ -1,5 +1,15 @@
 {
   "java.compile.nullAnalysis.mode": "automatic",
   "cmake.sourceDirectory": "C:/Flutter Apps/food_recipe_app_nsbm/build/windows/x64/extracted/firebase_cpp_sdk_windows",
-  "cSpell.words": ["Iconsax", "nsbm", "tiktok"]
+  "cSpell.words": [
+    "Appbar",
+    "ARGB",
+    "Iconsax",
+    "jlmp",
+    "nsbm",
+    "RGBO",
+    "signinpage",
+    "Tabscreens",
+    "tiktok"
+  ]
 }

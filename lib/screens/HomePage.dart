@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_recipe_app_nsbm/constans.dart';
+import 'package:food_recipe_app_nsbm/constants.dart';
 import 'package:food_recipe_app_nsbm/screens/Home.dart';
 import 'package:iconsax/iconsax.dart';
 

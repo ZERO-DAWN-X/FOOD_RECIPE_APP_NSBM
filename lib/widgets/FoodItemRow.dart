@@ -25,7 +25,7 @@ class _FoodItemRowState extends State<FoodItemRow> {
             ),
           ),
           child: Container(
-            margin: EdgeInsets.only(right: 15),
+            margin: const EdgeInsets.only(right: 15),
             width: 260,
             child: Stack(
               children: [
@@ -43,13 +43,13 @@ class _FoodItemRowState extends State<FoodItemRow> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Text(
                       widget.foods[index].name,
                       style: foodStyle.copyWith(
                           fontSize: 15, fontWeight: FontWeight.w500),
                     ),
-                    SizedBox(height: 2),
+                    const SizedBox(height: 2),
                     Padding(
                       padding: const EdgeInsets.only(left: 1, right: 1),
                       child: SingleChildScrollView(
@@ -58,12 +58,12 @@ class _FoodItemRowState extends State<FoodItemRow> {
                           children: [
                             Row(
                               children: [
-                                Icon(
+                                const Icon(
                                   Iconsax.clock,
                                   color: Colors.grey,
                                   size: 16,
                                 ),
-                                SizedBox(width: 7),
+                                const SizedBox(width: 7),
                                 Text("${widget.foods[index].time} min",
                                     style: foodStyle.copyWith(
                                       fontSize: 14,
@@ -71,15 +71,15 @@ class _FoodItemRowState extends State<FoodItemRow> {
                                     )),
                               ],
                             ),
-                            SizedBox(width: 20),
+                            const SizedBox(width: 20),
                             Row(
                               children: [
-                                Icon(
+                                const Icon(
                                   Iconsax.medal_star5,
                                   color: Color.fromARGB(255, 24, 141, 20),
                                   size: 17,
                                 ),
-                                SizedBox(width: 5),
+                                const SizedBox(width: 5),
                                 Text(
                                     "${widget.foods[index].rate} (${widget.foods[index].review} reviews)",
                                     style: foodStyle.copyWith(

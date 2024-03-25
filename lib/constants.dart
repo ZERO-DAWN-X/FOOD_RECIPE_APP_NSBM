@@ -33,8 +33,8 @@ CarouselSlider carouselSlider = CarouselSlider(
     enableInfiniteScroll: true,
     reverse: false,
     autoPlay: true,
-    autoPlayInterval: Duration(seconds: 3),
-    autoPlayAnimationDuration: Duration(milliseconds: 1000),
+    autoPlayInterval: const Duration(seconds: 3),
+    autoPlayAnimationDuration: const Duration(milliseconds: 1000),
     autoPlayCurve: Curves.fastOutSlowIn,
     enlargeCenterPage: true,
     scrollDirection: Axis.horizontal,
@@ -56,10 +56,10 @@ CarouselSlider carouselSlider = CarouselSlider(
 BoxDecoration CategoryBtnDecoration = BoxDecoration(
     color: Colors.grey[200], borderRadius: BorderRadius.circular(10));
 EdgeInsets CategoryBtnPadding =
-    EdgeInsets.symmetric(horizontal: 15, vertical: 7);
+    const EdgeInsets.symmetric(horizontal: 15, vertical: 7);
 // -------------------------------------------    ---------------------------------------------
 
-TextStyle CategoryBtnStyle = TextStyle(
+TextStyle CategoryBtnStyle = const TextStyle(
   fontSize: 16,
   fontWeight: FontWeight.w500,
   color: Colors.black,
@@ -75,7 +75,7 @@ Container Sector = Container(
 
 BoxDecoration boxDecoration = BoxDecoration(
   borderRadius: BorderRadius.circular(10),
-  image: DecorationImage(
+  image: const DecorationImage(
     image: AssetImage("assets/images/1.png"),
     fit: BoxFit.cover,
   ),

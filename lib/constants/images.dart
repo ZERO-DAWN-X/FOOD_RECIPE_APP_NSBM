@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 DecorationImage bgImage = DecorationImage(
   image: const AssetImage("assets/images/3.jpg"),
@@ -12,7 +11,7 @@ const InputDecoration textField_Decoration = InputDecoration(
   contentPadding: EdgeInsets.all(15),
   hintText: "Enter email",
   hintStyle: TextStyle(
-      color: Color.fromARGB(255, 179, 179, 179),
+      color: Color.fromRGBO(179, 179, 179, 1),
       fontFamily: 'roboto',
       fontSize: 13),
   // labelText: "Email",
@@ -24,7 +23,7 @@ const InputDecoration textField_Decoration = InputDecoration(
       // borderRadius: BorderRadius.all(Radius.circular(100))
       ),
   focusedBorder: OutlineInputBorder(
-      borderSide: BorderSide(color: Color(0xfffFF3D00)),
+      borderSide: BorderSide(color: Color(0xfffff3d00)),
       borderRadius: BorderRadius.all(Radius.circular(100))),
 );
 
@@ -37,7 +36,7 @@ GestureDetector SocialIcon = GestureDetector(
 );
 
 BoxDecoration LogBtn = BoxDecoration(
-  color: const Color(0xfffFF3D00),
+  color: const Color(0xfffff3d00),
   borderRadius: BorderRadius.circular(100),
 );
 
@@ -51,10 +50,10 @@ TextStyle LogBtnStyle = const TextStyle(
 
 BoxDecoration SocialMediaDECORATION = BoxDecoration(
   borderRadius: BorderRadius.circular(100),
-  color: Color.fromARGB(255, 252, 34, 136),
+  color: const Color.fromARGB(255, 252, 34, 136),
 );
 
-TextStyle SocialMediaTEXT = TextStyle(
+TextStyle SocialMediaTEXT = const TextStyle(
   fontSize: 10,
   fontWeight: FontWeight.w600,
   fontFamily: 'Poppins',

@@ -3,14 +3,14 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 // get CategoryButtons.dart selectedBtn value and assign it to Tabscreens[selectedBtn]
 
-class CategoryItems extends StatefulWidget {
-  const CategoryItems({super.key});
+class VideoCategoryItems extends StatefulWidget {
+  const VideoCategoryItems({super.key});
 
   @override
-  State<CategoryItems> createState() => _CategoryItemsState();
+  State<VideoCategoryItems> createState() => _VideoCategoryItemsState();
 }
 
-class _CategoryItemsState extends State<CategoryItems> {
+class _VideoCategoryItemsState extends State<VideoCategoryItems> {
   late YoutubePlayerController _controller;
 
   @override
@@ -18,7 +18,7 @@ class _CategoryItemsState extends State<CategoryItems> {
     super.initState();
     _controller = YoutubePlayerController(
       initialVideoId: 'aqz-KE-bpKQ',
-      flags: YoutubePlayerFlags(
+      flags: const YoutubePlayerFlags(
         autoPlay: false,
         loop: true,
       ),
@@ -30,10 +30,10 @@ class _CategoryItemsState extends State<CategoryItems> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
 
         // Video Player -----------------------------------------------
-        Container(
+        SizedBox(
           width: 400,
           height: 250,
           child: YoutubePlayer(

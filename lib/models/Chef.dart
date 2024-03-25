@@ -6,6 +6,7 @@ class Chef {
   double FollowersCount;
   double LikesCount;
   String description;
+  bool isFollowed;
 
   Chef({
     required this.name,
@@ -15,6 +16,7 @@ class Chef {
     required this.FollowersCount,
     required this.LikesCount,
     required this.description,
+    required this.isFollowed,
   });
 }
 
@@ -24,13 +26,14 @@ List<Chef> chefs = [
     image: "assets/images/p1.png",
     isSelected: true,
     RecipesCount: 2006,
-    FollowersCount: 7770,
+    FollowersCount: 770,
     LikesCount: 190,
-    description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    isFollowed: false,
   ),
   Chef(
     name: "Hirusha sanjula",
@@ -39,9 +42,11 @@ List<Chef> chefs = [
     RecipesCount: 8080,
     FollowersCount: 280,
     LikesCount: 1390,
-    description:"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    description:
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    isFollowed: false,
   ),
   Chef(
     name: "Pulindu",
@@ -50,11 +55,12 @@ List<Chef> chefs = [
     RecipesCount: 2450,
     FollowersCount: 20055,
     LikesCount: 1048,
-    description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    isFollowed: false,
   ),
   Chef(
     name: "Ravindu bandara",
@@ -63,11 +69,12 @@ List<Chef> chefs = [
     RecipesCount: 2450,
     FollowersCount: 8050,
     LikesCount: 1050,
-    description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    isFollowed: false,
   ),
   Chef(
     name: "Chef 5",
@@ -76,11 +83,12 @@ List<Chef> chefs = [
     RecipesCount: 20,
     FollowersCount: 250,
     LikesCount: 100,
-    description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    isFollowed: false,
   ),
   Chef(
     name: "Chef 6",
@@ -89,11 +97,12 @@ List<Chef> chefs = [
     RecipesCount: 250,
     FollowersCount: 200,
     LikesCount: 100,
-    description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    isFollowed: false,
   ),
   Chef(
     name: "Chef 7",
@@ -102,11 +111,12 @@ List<Chef> chefs = [
     RecipesCount: 20,
     FollowersCount: 200,
     LikesCount: 100,
-    description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    isFollowed: false,
   ),
   Chef(
     name: "Chef 8",
@@ -115,11 +125,12 @@ List<Chef> chefs = [
     RecipesCount: 20,
     FollowersCount: 260,
     LikesCount: 1980,
-    description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    isFollowed: false,
   ),
   Chef(
     name: "Chef 9",
@@ -128,11 +139,12 @@ List<Chef> chefs = [
     RecipesCount: 20,
     FollowersCount: 205,
     LikesCount: 10,
-    description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    isFollowed: false,
   ),
   Chef(
     name: "Chef 10",
@@ -141,11 +153,12 @@ List<Chef> chefs = [
     RecipesCount: 20,
     FollowersCount: 370,
     LikesCount: 500,
-    description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    isFollowed: false,
   ),
 ];
 

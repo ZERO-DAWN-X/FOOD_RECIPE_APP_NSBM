@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app_nsbm/models/TabScreens.dart';
-import '../constans.dart';
+import '../constants.dart';
 
 const List<String> categories = [
   "All",
   "New Arrival",
-  "Best Resipes",
+  "Best Recipes",
   "Hot Deals",
-  "Favourites",
+  "Favorites",
 ];
 
 class CategoryButtons extends StatefulWidget {
@@ -52,13 +52,12 @@ class _CategoryButtonsState extends State<CategoryButtons> {
             ),
           ),
         ),
-        SizedBox(height: 15),
-
+        const SizedBox(height: 15),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Text(
-              "Food Resipes",
+              "Food Recipes",
               style: TextStyle(
                 fontSize: 20,
                 fontFamily: "poppins",
@@ -78,9 +77,7 @@ class _CategoryButtonsState extends State<CategoryButtons> {
             ),
           ],
         ),
-
-        SizedBox(height: 20),
-
+        const SizedBox(height: 20),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
@@ -89,8 +86,7 @@ class _CategoryButtonsState extends State<CategoryButtons> {
             ],
           ),
         ),
-        SizedBox(height: 20),
-
+        const SizedBox(height: 20),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
@@ -99,18 +95,6 @@ class _CategoryButtonsState extends State<CategoryButtons> {
             ],
           ),
         ),
-        // SizedBox(height: 20),
-        // Row(
-        //   children: List.generate(
-        //     10,
-        //     (index) => Container(
-        //       decoration: boxDecoration,
-        //       margin: EdgeInsets.only(right: 15),
-        //       height: 170,
-        //       width: 280,
-        //     ),
-        //   ),
-        // )
       ],
     );
   }

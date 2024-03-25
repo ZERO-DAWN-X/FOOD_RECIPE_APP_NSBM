@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import '../models/TopRecipes.dart';
 
 class TopRecipes extends StatefulWidget {
@@ -22,7 +20,7 @@ class _TopRecipesState extends State<TopRecipes> {
           (index) => GestureDetector(
             onTap: () {},
             child: Container(
-              margin: EdgeInsets.only(right: 7),
+              margin: const EdgeInsets.only(right: 7),
               width: 115,
               height: 185,
               decoration: BoxDecoration(
@@ -50,21 +48,21 @@ class _TopRecipesState extends State<TopRecipes> {
                           children: [
                             Text(
                               widget.topStatus[index].name,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontFamily: "Poppins",
                                 fontWeight: FontWeight.w500,
                                 fontSize: 12,
                               ),
                             ),
-                            SizedBox(height: 3),
+                            const SizedBox(height: 3),
                             Row(
                               children: [
                                 Image.asset(widget.topStatus[index].profile,
                                     width: 11, height: 11),
-                                SizedBox(width: 5),
+                                const SizedBox(width: 5),
                                 Text(widget.topStatus[index].chef,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       color: Colors.white,
                                       fontFamily: "Poppins",
                                       fontWeight: FontWeight.w500,

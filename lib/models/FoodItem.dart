@@ -85,7 +85,7 @@ List<Food> foods = [
   ),
 ];
 
-TextStyle foodStyle = TextStyle(
+TextStyle foodStyle = const TextStyle(
   fontSize: 18,
   fontFamily: "poppins",
 );

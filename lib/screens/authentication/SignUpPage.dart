@@ -5,7 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../constants/images.dart';
 
 class SignUpPage extends StatefulWidget {
-  //funtion
+  // function to toggle between pages
+
   final Function toggleView;
   const SignUpPage({super.key, required this.toggleView});
 
@@ -31,342 +32,331 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            children: [
-              Container(
-                height: 300,
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
-                      bottomRight: Radius.circular(140)),
-                  image: DecorationImage(
-                      image: const AssetImage('assets/images/b6.png'),
-                      fit: BoxFit.cover),
-                ),
-                child: Stack(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.only(
-                            bottomLeft: Radius.circular(0),
-                            bottomRight: Radius.circular(140)),
-                        color: Colors.black.withOpacity(0.5),
-                      ),
+        child: Column(
+          children: [
+            Container(
+              height: 300,
+              decoration: const BoxDecoration(
+                borderRadius:
+                    BorderRadius.only(bottomRight: Radius.circular(140)),
+                image: DecorationImage(
+                    image: AssetImage('assets/images/b6.png'),
+                    fit: BoxFit.cover),
+              ),
+              child: Stack(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.only(
+                          bottomLeft: Radius.circular(0),
+                          bottomRight: Radius.circular(140)),
+                      color: Colors.black.withOpacity(0.5),
                     ),
-                    Container(
-                      child: Positioned(
-                        top: 50,
-                        right: 20,
-                        child: Container(
-                          width: 80,
-                          height: 30,
-                          child: ElevatedButton(
-                            onPressed: () async {
-                              dynamic result = await _auth.signInAnonymously();
-                              if (result == null) {
-                                print("Error Signing In");
-                              } else {
-                                print("Signed In");
-                                print(result.uid);
-                              }
-                            },
-                            child: const Center(
-                              child: Text(
-                                "Skip",
-                                style: TextStyle(
-                                    color: Color(0xfffFF3D00),
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w600),
-                              ),
-                            ),
+                  ),
+                  Positioned(
+                    top: 50,
+                    right: 20,
+                    child: SizedBox(
+                      width: 80,
+                      height: 30,
+                      child: ElevatedButton(
+                        onPressed: () async {
+                          dynamic result = await _auth.signInAnonymously();
+                          if (result == null) {
+                            print("Error Signing In");
+                          } else {
+                            print("Signed In");
+                            print(result.uid);
+                          }
+                        },
+                        child: const Center(
+                          child: Text(
+                            "Skip",
+                            style: TextStyle(
+                                color: Color(0xfffff3d00),
+                                fontSize: 15,
+                                fontWeight: FontWeight.w600),
                           ),
                         ),
                       ),
                     ),
-                    Container(
-                      padding: const EdgeInsets.only(top: 130, left: 30),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "New Recipes",
-                            style: GoogleFonts.poppins(
-                              fontSize: 35,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.white,
-                            ),
-                          ),
-                          Text(
-                            "Register to continue",
-                            style: GoogleFonts.poppins(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.only(top: 130, left: 30),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Register',
-                          style: TextStyle(
-                              color: Color(0xfffFF3D00),
-                              fontSize: 32,
-                              fontWeight: FontWeight.w700,
-                              fontFamily: "poppins"),
+                          "New Recipes",
+                          style: GoogleFonts.poppins(
+                            fontSize: 35,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white,
+                          ),
                         ),
                         Text(
-                          " Cooking",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 32,
-                              fontWeight: FontWeight.w700,
-                              fontFamily: "poppins"),
-                        )
+                          "Register to continue",
+                          style: GoogleFonts.poppins(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white,
+                          ),
+                        ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Form(
-                      key: _formKey, // Validation
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Register',
+                        style: TextStyle(
+                            color: Color(0xfffff3d00),
+                            fontSize: 32,
+                            fontWeight: FontWeight.w700,
+                            fontFamily: "poppins"),
+                      ),
+                      Text(
+                        " Cooking",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 32,
+                            fontWeight: FontWeight.w700,
+                            fontFamily: "poppins"),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Form(
+                    key: _formKey, // Validation
 
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            error,
-                            style: TextStyle(
-                                color: Color(0xfffFF3D00), fontSize: 12.0),
-                          ),
-                          SizedBox(
-                            height: 7,
-                          ),
-                          SizedBox(
-                            height: 45,
-                            width: 340,
-                            child: TextFormField(
-                                validator: (value) => value!.isEmpty == true
-                                    ? "Enter Email"
-                                    : null,
-                                style: const TextStyle(
-                                    color: Colors.black, fontSize: 14),
-                                onChanged: (value) {
-                                  setState(() {
-                                    email = value;
-                                  });
-                                },
-                                decoration: textField_Decoration),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          SizedBox(
-                            height: 45,
-                            width: 340,
-                            child: TextFormField(
-                              validator: (value) => value!.length < 6
-                                  ? "Enter Password 6 charactors long."
-                                  : null,
+                    child: Column(
+                      children: [
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          error,
+                          style: TextStyle(
+                              color: Color(0xfffff3d00), fontSize: 12.0),
+                        ),
+                        const SizedBox(
+                          height: 7,
+                        ),
+                        SizedBox(
+                          height: 45,
+                          width: 340,
+                          child: TextFormField(
+                              validator: (value) =>
+                                  value!.isEmpty == true ? "Enter Email" : null,
                               style: const TextStyle(
                                   color: Colors.black, fontSize: 14),
                               onChanged: (value) {
                                 setState(() {
-                                  password = value;
+                                  email = value;
                                 });
                               },
-                              obscureText:
-                                  _obscureText, // Toggle password visibility
-                              decoration: textField_Decoration.copyWith(
-                                hintText: "Enter password",
-                                suffixIcon: Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(horizontal: 5),
-                                  child: IconButton(
-                                    icon: Icon(
-                                      size: 21,
-                                      _obscureText
-                                          ? Icons.visibility
-                                          : Icons.visibility_off,
-                                      color: const Color.fromARGB(
-                                          255, 194, 194, 194),
-                                    ),
-                                    onPressed: () {
-                                      setState(() {
-                                        _obscureText =
-                                            !_obscureText; // Toggle password visibility
-                                      });
-                                    },
+                              decoration: textField_Decoration),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        SizedBox(
+                          height: 45,
+                          width: 340,
+                          child: TextFormField(
+                            validator: (value) => value!.length < 6
+                                ? "Enter Password 6 characters long."
+                                : null,
+                            style: const TextStyle(
+                                color: Colors.black, fontSize: 14),
+                            onChanged: (value) {
+                              setState(() {
+                                password = value;
+                              });
+                            },
+                            obscureText:
+                                _obscureText, // Toggle password visibility
+                            decoration: textField_Decoration.copyWith(
+                              hintText: "Enter password",
+                              suffixIcon: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5),
+                                child: IconButton(
+                                  icon: Icon(
+                                    size: 21,
+                                    _obscureText
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
+                                    color: const Color.fromARGB(
+                                        255, 194, 194, 194),
                                   ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          SizedBox(
-                            height: 45,
-                            width: 340,
-                            child: TextFormField(
-                              validator: (value) => value!.length < 6
-                                  ? "Enter Password 6 charactors long."
-                                  : null,
-                              style: const TextStyle(
-                                  color: Colors.black, fontSize: 14),
-                              onChanged: (value) {
-                                setState(() {
-                                  password = value;
-                                });
-                              },
-                              obscureText:
-                                  _obscureText, // Toggle password visibility
-                              decoration: textField_Decoration.copyWith(
-                                hintText: "Re enter password",
-                                suffixIcon: Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(horizontal: 5),
-                                  child: IconButton(
-                                    icon: Icon(
-                                      size: 21,
-                                      _obscureText
-                                          ? Icons.visibility
-                                          : Icons.visibility_off,
-                                      color: const Color.fromARGB(
-                                          255, 194, 194, 194),
-                                    ),
-                                    onPressed: () {
-                                      setState(() {
-                                        _obscureText =
-                                            !_obscureText; // Toggle password visibility
-                                      });
-                                    },
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Text(
-                            "Forgot Password?",
-                            style: GoogleFonts.poppins(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                              color: const Color(0xfffFF3D00),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Text(
-                                "If You Have Account  ",
-                                style: TextStyle(
-                                    fontFamily: "poppins",
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500,
-                                    color: Color.fromARGB(221, 31, 31, 31)),
-                              ),
-                              MouseRegion(
-                                cursor: SystemMouseCursors.click,
-                                child: GestureDetector(
-                                  onTap: () {
-                                    widget.toggleView();
+                                  onPressed: () {
+                                    setState(() {
+                                      _obscureText =
+                                          !_obscureText; // Toggle password visibility
+                                    });
                                   },
-                                  child: const Text(
-                                    "LOGIN",
-                                    style: TextStyle(
-                                        fontFamily: "poppins",
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.w800,
-                                        color: Color(0xfffFF3D00)),
-                                  ),
                                 ),
                               ),
-                            ],
+                            ),
                           ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              GestureDetector(
-                                  onTap: () {},
-                                  child: Image.asset(
-                                    "assets/images/google.png",
-                                    height: 33,
-                                  )),
-                              const SizedBox(
-                                width: 15,
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        SizedBox(
+                          height: 45,
+                          width: 340,
+                          child: TextFormField(
+                            validator: (value) => value!.length < 6
+                                ? "Enter Password 6 characters long."
+                                : null,
+                            style: const TextStyle(
+                                color: Colors.black, fontSize: 14),
+                            onChanged: (value) {
+                              setState(() {
+                                password = value;
+                              });
+                            },
+                            obscureText:
+                                _obscureText, // Toggle password visibility
+                            decoration: textField_Decoration.copyWith(
+                              hintText: "Re enter password",
+                              suffixIcon: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5),
+                                child: IconButton(
+                                  icon: Icon(
+                                    size: 21,
+                                    _obscureText
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
+                                    color: const Color.fromARGB(
+                                        255, 194, 194, 194),
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      _obscureText =
+                                          !_obscureText; // Toggle password visibility
+                                    });
+                                  },
+                                ),
                               ),
-                              GestureDetector(
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        Text(
+                          "Forgot Password?",
+                          style: GoogleFonts.poppins(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                            color: const Color(0xfffff3d00),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                              "If You Have Account  ",
+                              style: TextStyle(
+                                  fontFamily: "poppins",
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                  color: Color.fromARGB(221, 31, 31, 31)),
+                            ),
+                            MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: GestureDetector(
+                                onTap: () {
+                                  widget.toggleView();
+                                },
+                                child: const Text(
+                                  "LOGIN",
+                                  style: TextStyle(
+                                      fontFamily: "poppins",
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w800,
+                                      color: Color(0xfffff3d00)),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            GestureDetector(
                                 onTap: () {},
                                 child: Image.asset(
-                                  "assets/images/fb.png",
-                                  height: 30,
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          GestureDetector(
-                            onTap: () async {
-                              dynamic result =
-                                  await _auth.registerWithEmailAndPassword(
-                                      email, password);
-
-                              if (result == null) {
-                                setState(() {
-                                  error =
-                                      "Please enter valid email and password.";
-                                });
-                              }
-                            },
-                            child: Container(
-                              height: 45,
-                              width: 340,
-                              decoration: LogBtn,
-                              // border: Border.all(width: 2,color: Color(0xfff1976D2))
-
-                              child: Center(
-                                child:
-                                    Text("CREATE ACCOUNT", style: LogBtnStyle),
+                                  "assets/images/google.png",
+                                  height: 33,
+                                )),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Image.asset(
+                                "assets/images/fb.png",
+                                height: 30,
                               ),
                             ),
+                          ],
+                        ),
+                        const SizedBox(height: 30),
+                        GestureDetector(
+                          onTap: () async {
+                            dynamic result = await _auth
+                                .registerWithEmailAndPassword(email, password);
+
+                            if (result == null) {
+                              setState(() {
+                                error =
+                                    "Please enter valid email and password.";
+                              });
+                            }
+                          },
+                          child: Container(
+                            height: 45,
+                            width: 340,
+                            decoration: LogBtn,
+                            // border: Border.all(width: 2,color: Color(0xfff1976D2))
+
+                            child: Center(
+                              child: Text("CREATE ACCOUNT", style: LogBtnStyle),
+                            ),
                           ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                        ],
-                      ),
+                        ),
+                        const SizedBox(height: 20),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

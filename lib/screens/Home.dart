@@ -3,10 +3,9 @@ import 'package:food_recipe_app_nsbm/models/TopRecipes.dart';
 import 'package:food_recipe_app_nsbm/widgets/CategoryButtons.dart';
 import 'package:food_recipe_app_nsbm/widgets/HomeSearchBar.dart';
 import 'package:food_recipe_app_nsbm/widgets/Top_Recipes.dart';
-import '../widgets/CategoryItems.dart';
 import '../widgets/HomeAppbar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:food_recipe_app_nsbm/constans.dart';
+import 'package:food_recipe_app_nsbm/constants.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -21,15 +20,20 @@ class _HomeState extends State<Home> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: EdgeInsets.all(17.0),
+          padding: const EdgeInsets.all(18.0),
           child: SingleChildScrollView(
+            // Column for the whole body of home page -------------------------------------------
+
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                HomeAppbar(),
-                SizedBox(height: 20),
-                HomeSearchBar(),
-                SizedBox(height: 20),
+                const HomeAppbar(),
+                const SizedBox(height: 20),
+                const HomeSearchBar(),
+                const SizedBox(height: 20),
+
+                // Carousel Slider --------------------------------------------
+
                 CarouselSlider(
                   options: CarouselOptions(
                     height: 170.0,
@@ -39,8 +43,9 @@ class _HomeState extends State<Home> {
                     enableInfiniteScroll: true,
                     reverse: false,
                     autoPlay: true,
-                    autoPlayInterval: Duration(seconds: 5),
-                    autoPlayAnimationDuration: Duration(milliseconds: 1000),
+                    autoPlayInterval: const Duration(seconds: 5),
+                    autoPlayAnimationDuration:
+                        const Duration(milliseconds: 1000),
                     autoPlayCurve: Curves.fastOutSlowIn,
                     enlargeCenterPage: true,
                     scrollDirection: Axis.horizontal,
@@ -57,30 +62,38 @@ class _HomeState extends State<Home> {
                           ))
                       .toList(),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Text(
+                const Text(
                   "Top Recipes",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                TopRecipes(
-                  topStatus: Status,
-                ),
-                SizedBox(height: 20),
-                Text(
+
+                // Top Recipes List View ---------------------------------------
+
+                TopRecipes(topStatus: Status),
+                const SizedBox(height: 20),
+
+                // Categories --------------------------------------------
+
+                const Text(
                   "Categories",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 20),
-                CategoryButtons(),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
+
+                // Category Buttons --------------------------------------------
+
+                const CategoryButtons(),
+
+                const SizedBox(height: 20),
                 // CategoryItems(),
               ],
             ),
