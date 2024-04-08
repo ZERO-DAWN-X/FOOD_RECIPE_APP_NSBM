@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app_nsbm/screens/RecipeScreen.dart';
 import 'package:iconsax/iconsax.dart';
@@ -80,12 +81,24 @@ class _FoodItemRowState extends State<FoodItemRow> {
                                   size: 17,
                                 ),
                                 const SizedBox(width: 5),
-                                Text(
-                                    "${widget.foods[index].rate} (${widget.foods[index].review} reviews)",
-                                    style: foodStyle.copyWith(
-                                      fontSize: 14,
-                                      color: Colors.grey,
-                                    )),
+                                StreamBuilder<DocumentSnapshot>(
+                                    stream: FirebaseFirestore.instance
+                                        .collection('Foods')
+                                        .doc('NOh6bSEp8yR68hdQoSte')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      if (snapshot.hasError || !snapshot.hasData) {
+                                        return Text('Error: ${snapshot.error}');
+                                      }
+                                      int review =
+                                          snapshot.data!.get('reviews');
+                                      return Text(
+                                          "${widget.foods[index].rate} ($review reviews)",
+                                          style: foodStyle.copyWith(
+                                            fontSize: 14,
+                                            color: Colors.grey,
+                                          ));
+                                    }),
                               ],
                             ),
                           ],
@@ -102,9 +115,14 @@ class _FoodItemRowState extends State<FoodItemRow> {
                       setState(() {
                         widget.foods[index].isLiked =
                             !widget.foods[index].isLiked;
-                        widget.foods[index].review = widget.foods[index].isLiked
-                            ? widget.foods[index].review + 1
-                            : widget.foods[index].review - 1;
+                      });
+                      FirebaseFirestore.instance
+                          .collection('Foods')
+                          .doc('NOh6bSEp8yR68hdQoSte')
+                          .update({
+                        'isLiked': widget.foods[index].isLiked,
+                        'reviews': FieldValue.increment(
+                            widget.foods[index].isLiked ? 1 : -1)
                       });
                     },
                     style: IconButton.styleFrom(

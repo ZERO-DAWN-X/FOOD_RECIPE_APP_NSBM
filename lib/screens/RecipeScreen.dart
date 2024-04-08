@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app_nsbm/constants/images.dart';
 import 'package:food_recipe_app_nsbm/models/FoodItem.dart';
@@ -42,9 +43,13 @@ class _RecipeScreenState extends State<RecipeScreen> {
           onPressed: () {
             setState(() {
               widget.food.isLiked = !widget.food.isLiked;
-              widget.food.isLiked
-                  ? widget.food.review + 1
-                  : widget.food.review - 1;
+            });
+            FirebaseFirestore.instance
+                .collection('Foods')
+                .doc("NOh6bSEp8yR68hdQoSte")
+                .update({
+              'isLiked': widget.food.isLiked,
+              'reviews': FieldValue.increment(widget.food.isLiked ? 1 : -1)
             });
           },
           icon: Icon(
@@ -356,12 +361,12 @@ class _RecipeScreenState extends State<RecipeScreen> {
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(width: 25),
+                                  const SizedBox(width: 5),
 
                                   // FOLLOW Button ---------------------------------------------------------------
 
                                   SizedBox(
-                                    width: 100,
+                                    width: 90,
                                     height: 30,
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
@@ -434,7 +439,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                                       ),
                                     ),
                                   ),
-                                  const SizedBox(width: 10),
+                                  const SizedBox(width: 5),
                                   Expanded(
                                     child: Container(
                                       decoration: SOCIALIndicate,
@@ -467,7 +472,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                                       ),
                                     ),
                                   ),
-                                  const SizedBox(width: 10),
+                                  const SizedBox(width: 5),
                                   Expanded(
                                     child: Container(
                                       decoration: SOCIALIndicate,

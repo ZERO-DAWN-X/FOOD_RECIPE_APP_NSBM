@@ -23,6 +23,8 @@ dependencies:
   video_player: ^2.8.2
   loading_animation_widget: ^1.2.0+4
   youtube_player_flutter: ^9.0.0
+  firebase_database: ^10.5.0
+  cloud_firestore: ^4.16.0
 
 dev_dependencies:
   flutter_test:
