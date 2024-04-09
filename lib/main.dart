@@ -1,8 +1,8 @@
 import 'dart:io';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app_nsbm/LoadingScreen.dart';
+import 'package:food_recipe_app_nsbm/screens/Favourite.dart';// Import the Food class
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,6 +18,7 @@ void main() async {
               projectId: "nsbm-food-app"))
       : await Firebase.initializeApp();
 
+  // addFoodsToFirestore();           // Call the function to add foods to Firestore
   runApp(const MainApp());
 }
 

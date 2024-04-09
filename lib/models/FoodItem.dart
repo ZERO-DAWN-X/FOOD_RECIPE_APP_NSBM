@@ -85,11 +85,6 @@ List<Food> foods = [
   ),
 ];
 
-TextStyle foodStyle = const TextStyle(
-  fontSize: 18,
-  fontFamily: "poppins",
-);
-
 List<Food> foods1 = [
   Food(
     name: "Grilled banana",
@@ -156,3 +151,8 @@ List<Food> foods1 = [
     isLiked: false,
   ),
 ];
+
+TextStyle foodStyle = const TextStyle(
+  fontSize: 18,
+  fontFamily: "poppins",
+);

@@ -1,31 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:food_recipe_app_nsbm/widgets/FoodItemRow.dart';
+import '../models/food_model.dart';
 
-import 'FoodItem.dart';
 
-List<Widget> generateTabscreens(List<Food> foods) {
+List<Food> fetchDataFromFirestore() {
+
+
+  List<Food> foods = []; // Initialize empty list
+  return foods;
+}
+
+List<Widget> generateTabscreens() {
+  List<Food> foods = fetchDataFromFirestore(); // Fetch data Firestore
   return [
     FoodItemRow(foods: foods),
-    FoodItemRow(foods: foods1),
     FoodItemRow(foods: foods),
-    FoodItemRow(foods: foods1),
     FoodItemRow(foods: foods),
-    FoodItemRow(foods: foods1)
+    FoodItemRow(foods: foods),
+    FoodItemRow(foods: foods),
+    FoodItemRow(foods: foods),
   ];
 }
 
-List<Widget> Tabscreens1 = generateTabscreens(foods);
-List<Widget> Tabscreens2 = generateTabscreens(foods1);
-
-// List Tabscreens1 = [
-//   Test(),
-//   FoodItemRow(foods: foods),
-//   Test(),
-//   FoodItemRow(foods: foods),
-//   Test(),
-//   FoodItemRow(foods: foods)
-// ];
+List Tabscreens1 = generateTabscreens();
 
 // List<Widget> ChefTab = [
 //   ChefDetails(chefs: chefs),
