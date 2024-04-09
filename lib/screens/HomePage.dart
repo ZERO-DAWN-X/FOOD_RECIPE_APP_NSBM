@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app_nsbm/constants.dart';
 import 'package:food_recipe_app_nsbm/screens/Home.dart';
+import 'package:food_recipe_app_nsbm/screens/Settings.dart';
 import 'package:iconsax/iconsax.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,7 +18,7 @@ class _HomePageState extends State<HomePage> {
     Container(color: Colors.green),
     Container(color: Colors.blue),
     Container(color: Colors.yellow),
-    Container(color: Colors.purple),
+    const SettingPage(),
   ];
 
   @override
