@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:food_recipe_app_nsbm/screens/authentication/SignUpPage.dart';
 import 'package:flutter/material.dart';
 
 class EditAccountSetting extends StatefulWidget {
@@ -8,94 +10,46 @@ class EditAccountSetting extends StatefulWidget {
 }
 
 class _EditAccountSettingState extends State<EditAccountSetting> {
+//crurrent user
+  final currentUser = FirebaseAuth.instance.currentUser!;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: const Icon(Icons.arrow_back),
-          color: Colors.black,
+        appBar: AppBar(
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.arrow_back),
+            color: Colors.black,
+          ),
         ),
-        
-      ),
-       body: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+        body: ListView(
           children: [
-         const   Text(
-              'User Information',
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-            ),
             const SizedBox(
-              height: 30,
-            ),
-            ListTile(
-              leading: Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Color(0xfffff3d00),
-                ),
-                child: const Icon(Icons.email, color: Colors.white,),
-              ),
-              title: const Text('Email'),
+              height: 50, ),
 
-              trailing: Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: Colors.grey.withOpacity(0.5),
-                ),
-                child:   IconButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const EditAccountSetting(),
+              //image user
+                Image.asset(
+                    'assets/images/p3.png',
+                    width: 60,
+                    height: 100,
                   ),
-                  );
-                },
-                icon: Icon(Icons.arrow_forward_ios),
-                ),
-                
-              ),
-            ),
-            const SizedBox(height: 20,),
-             ListTile(
-              leading: Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Color(0xfffff3d00),
-                ),
-                child: const Icon(Icons.key_rounded, color: Colors.white,),
-              ),
-              title: const Text('Password'),
 
-              trailing: Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: Colors.grey.withOpacity(0.5),
-                ),
-                child:   IconButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const EditAccountSetting(),
-                  ),
-                  );
-                },
-                icon: Icon(Icons.arrow_forward_ios),
-                ),
-                
-              ),
-            ),
-          ]
-        )
-    ),
-    
-    );
+                  const SizedBox(height: 16,),
+
+                 //user email
+                 Text(currentUser.email!,
+                  textAlign: TextAlign.center,
+                 style: TextStyle(color: Colors.grey[700]),
+                 ),
+
+                 const SizedBox(height: 40,),
+                  
+                  //user details
+                 Padding(padding: co)
+          ],
+        ));
   }
 }
