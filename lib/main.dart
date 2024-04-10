@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app_nsbm/LoadingScreen.dart';
-import 'package:food_recipe_app_nsbm/screens/Favourite.dart';// Import the Food class
+import 'package:food_recipe_app_nsbm/screens/Favourite.dart'; // Import the Food class
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
