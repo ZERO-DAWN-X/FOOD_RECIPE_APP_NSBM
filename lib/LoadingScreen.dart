@@ -14,7 +14,8 @@ class LoadingScreen extends StatelessWidget {
           fit: StackFit.expand,
           children: [
             Container(
-              decoration: const BoxDecoration(color: Color(0xfffFF3D00)
+              // ignore: use_full_hex_values_for_flutter_colors
+              decoration: const BoxDecoration(color: Color(0xfffff3d00)
                   // image: DecorationImage(
                   //   image: AssetImage("assets/images/L2.jpg"),
                   //   fit: BoxFit.cover,

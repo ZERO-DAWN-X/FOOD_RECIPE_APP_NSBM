@@ -7,7 +7,7 @@ import 'package:food_recipe_app_nsbm/LoadingScreen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // FireBase Initialization -------------------------------------------
+  // ----------------------------- FireBase Initialization -------------------------------------------
 
   Platform.isAndroid
       ? await Firebase.initializeApp(
@@ -18,7 +18,7 @@ void main() async {
               projectId: "nsbm-food-app"))
       : await Firebase.initializeApp();
 
-  // addFoodsToFirestore();           // add foods to Firestore
+  // addFoodsToFirestore(); ---------------------- // add foods to Firestore
   runApp(const MainApp());
 }
 

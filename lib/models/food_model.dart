@@ -1,5 +1,32 @@
 import 'package:flutter/material.dart';
 
+class FavoriteChef {
+  String chefName;
+  String foodName;
+  String chefImage;
+  String foodImage;
+  double cookTime;
+
+  FavoriteChef({
+    required this.chefName,
+    required this.foodName,
+    required this.chefImage,
+    required this.foodImage,
+    required this.cookTime,
+  });
+
+  // Convert FavoriteChef object to a Map
+  Map<String, dynamic> toMap() {
+    return {
+      'chef_Name': chefName,
+      'food_Name': foodName,
+      'chef_Image': chefImage,
+      'food_Image': foodImage,
+      'cook_Time': cookTime,
+    };
+  }
+}
+
 class Food {
   String name;
   String image;

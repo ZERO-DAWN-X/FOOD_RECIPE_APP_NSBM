@@ -21,7 +21,7 @@ class _FoodItemRowState extends State<FoodItemRow> {
       stream: FirebaseFirestore.instance.collection('foods').snapshots(),
       builder: (context, snapshot) {
         if (snapshot.data == null) {
-          return CircularProgressIndicator();
+          return const CircularProgressIndicator.adaptive();
         }
 
         List<Food> foods = snapshot.data!.docs.map((doc) {
@@ -37,6 +37,7 @@ class _FoodItemRowState extends State<FoodItemRow> {
           );
         }).toList();
 
+        // ------------ Update Firestore data changes ------------
         return Row(
           children: List.generate(
             foods.length,
@@ -47,6 +48,8 @@ class _FoodItemRowState extends State<FoodItemRow> {
                   builder: (context) => RecipeScreen(food: foods[index]),
                 ),
               ),
+
+              // ------------ Food Item Row ------------
               child: Container(
                 margin: const EdgeInsets.only(right: 15),
                 width: 260,
@@ -55,6 +58,7 @@ class _FoodItemRowState extends State<FoodItemRow> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        // ------------ Food Image ------------
                         Container(
                           width: double.infinity,
                           height: 150,
@@ -67,6 +71,7 @@ class _FoodItemRowState extends State<FoodItemRow> {
                           ),
                         ),
                         const SizedBox(height: 5),
+                        // ------------ Food Name ------------
                         Text(
                           foods[index].name,
                           style: foodStyle.copyWith(
@@ -79,6 +84,7 @@ class _FoodItemRowState extends State<FoodItemRow> {
                             scrollDirection: Axis.horizontal,
                             child: Row(
                               children: [
+                                // ------------ Food Time ------------
                                 Row(
                                   children: [
                                     const Icon(
@@ -95,6 +101,7 @@ class _FoodItemRowState extends State<FoodItemRow> {
                                   ],
                                 ),
                                 const SizedBox(width: 20),
+                                // ------------ Food Reviews ------------
                                 Row(
                                   children: [
                                     const Icon(
@@ -126,7 +133,8 @@ class _FoodItemRowState extends State<FoodItemRow> {
                       top: 1,
                       right: 1,
                       child: IgnorePointer(
-                        ignoring: ignore, // ignore button presses when updating
+                        ignoring:
+                            ignore, // <------------ ignore button presses when updating
                         child: IconButton(
                           onPressed: () async {
                             if (!ignore) {
@@ -135,7 +143,7 @@ class _FoodItemRowState extends State<FoodItemRow> {
                                   ignore = true; // disable button
                                 });
 
-                                // Update Firestore data
+                                // --------------- Update Firestore data ---------------------
                                 await FirebaseFirestore.instance
                                     .collection('foods')
                                     .doc(snapshot.data!.docs[index].id)
@@ -145,15 +153,14 @@ class _FoodItemRowState extends State<FoodItemRow> {
                                       foods[index].isLiked ? -1 : 1),
                                 });
 
-                                // Update local state after Firestore update
+                                // ------------- Update local state after Firestore update --------------
                                 setState(() {
                                   foods[index].isLiked = !foods[index].isLiked;
                                 });
-                              } catch (e) {
-                                print('Error updating like status: $e');
                               } finally {
                                 setState(() {
-                                  ignore = false; // enable the button
+                                  ignore =
+                                      false; // <--------------------- enable the button ---------------
                                 });
                               }
                             }
@@ -163,6 +170,7 @@ class _FoodItemRowState extends State<FoodItemRow> {
                             minimumSize: const Size(18, 18),
                           ),
                           iconSize: 15,
+                          // ------------ Like Button ------------
                           icon: Icon(
                             foods[index].isLiked
                                 ? Iconsax.heart5

@@ -14,6 +14,9 @@ class RecipeScreen extends StatefulWidget {
 }
 
 class _RecipeScreenState extends State<RecipeScreen> {
+
+  bool isLike = false;
+
   int currentNumber = 1;
   int selectedChef = 0;
   int selectedAdd = 0;
@@ -55,28 +58,32 @@ class _RecipeScreenState extends State<RecipeScreen> {
           return Scaffold(
             backgroundColor: Colors.white,
 
-            // App Bar ---------------------------------------------------------------------------------------
+            // ------------------------------- App Bar --------------------------------
 
             appBar: AppBar(elevation: 0, actions: [
               const Spacer(),
               IconButton(
                 onPressed: () async {
                   setState(() {
-                    foods[selectedChef].isLiked = !foods[selectedChef].isLiked;
+                    isLike = !isLike;
                   });
 
-                  if (foods[selectedChef].isLiked) {
+                  if (isLike) {
                     await FirebaseFirestore.instance
                         .collection('Favorites')
                         .add({
-                      'chefName': chefs[selectedChef].name,
-                      'foodName': foods[selectedChef].name,
+                      'chef_Name': chefs[selectedChef].name,
+                      'food_Name': foods[selectedChef].name,
+                      'cook_Time': foods[selectedChef].time,
+                      'chef_Image': chefs[selectedChef].image,
+                      'food_Image': foods[selectedChef].image,
                     });
                   } else {
                     final snapshot = await FirebaseFirestore.instance
                         .collection('Favorites')
-                        .where('chefName', isEqualTo: chefs[selectedChef].name)
-                        .where('foodName', isEqualTo: foods[selectedChef].name)
+                        .where('chef_Name', isEqualTo: chefs[selectedChef].name)
+                        .where('food_Name', isEqualTo: foods[selectedChef].name)
+                        .where('cook_Time', isEqualTo: foods[selectedChef].time)
                         .get();
 
                     for (final doc in snapshot.docs) {
@@ -91,9 +98,9 @@ class _RecipeScreenState extends State<RecipeScreen> {
                   });
                 },
                 icon: Icon(
-                  foods[selectedChef].isLiked ? Iconsax.like5 : Iconsax.like,
+                  isLike ? Iconsax.like5 : Iconsax.like,
                   color:
-                      foods[selectedChef].isLiked ? Colors.red : Colors.black,
+                      isLike ? Colors.red : Colors.black,
                   size: 28,
                 ),
               ),
@@ -126,7 +133,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
               const SizedBox(width: 20),
             ]),
 
-            // Bottom Navigation Bar -----------------------------------------------------------------------
+            //-------------------------------- Bottom Navigation Bar -------------------------------
 
             bottomNavigationBar: Padding(
               padding: const EdgeInsets.all(15.0),
@@ -156,13 +163,13 @@ class _RecipeScreenState extends State<RecipeScreen> {
               ),
             ),
 
-            // APP BODY SECTION ---------------------------------------------------------------------------------------------
+            // -------------------------------------------- APP BODY SECTION ------------------------------------------
 
             body: SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: Column(
                 children: [
-                  // FOOD Item Image --------------------------------------------------------------------------------
+                  // ----------------------------------- FOOD Item Image -----------------------------------
                   Stack(
                     children: [
                       Positioned(
@@ -191,7 +198,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                     ],
                   ),
 
-                  // Image Bottom Swipe Down BAR -------------------------------------------------------------------------------
+                  // ---------------------------------------- Image Bottom Swipe Down BAR -------------------------------------
 
                   Center(
                     child: Padding(
@@ -208,7 +215,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                   ),
                   const SizedBox(height: 10),
 
-                  // FOOD Item Name --------------------------------------------------------------------------------
+                  // -------------------------------------- FOOD Item Name -------------------------------------
 
                   Text(
                     foods[currentNumber].name,
@@ -227,7 +234,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                       )),
                   const SizedBox(height: 20),
 
-                  // CHEF Selection --------------------------------------------------------------------------------
+                  // ------------------------------------ CHEF Selection -------------------------------------
 
                   Padding(
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
@@ -236,7 +243,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                         SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
 
-                          // CHEF Selection List GENERATE -----------------------------------------------------------------------
+                          // ------------------------------------ CHEF Selection List GENERATE -----------------------------------
 
                           child: Row(
                             children: List.generate(
@@ -249,7 +256,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                                   padding: const EdgeInsets.only(right: 20),
                                   child: Column(
                                     children: [
-                                      // CHEF Image and Name ---------------------------------------------------------------
+                                      // --------------------------------- CHEF Image and Name ---------------------------------
 
                                       CircleAvatar(
                                         radius: 30,
@@ -264,7 +271,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                                       ),
                                       const SizedBox(height: 10),
 
-                                      // CHEF Selected Background ---------------------------------------------------------------
+                                      // ------------------------------------ CHEF Selected Background --------------------------------
 
                                       Container(
                                         alignment: Alignment.center,
@@ -282,7 +289,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                                               top: 2.0,
                                               bottom: 3.0),
 
-                                          // CHEF Name ---------------------------------------------------------------
+                                          // ------------------------------ CHEF Name ------------------------------
 
                                           child: Text(
                                             chefs[index].name.split(' ')[0],
@@ -306,12 +313,12 @@ class _RecipeScreenState extends State<RecipeScreen> {
                         ),
                         const SizedBox(height: 30),
 
-                        // CHEF Description SECTION ----------------------------------------------------------------------------------
+                        // ---------------------------------- CHEF Description SECTION --------------------------------------
 
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            // CHEF Description Text ---------------------------------------------------------------
+                            // ------------------------------- CHEF Description Text --------------------------
 
                             const Text(
                               "Description",
@@ -323,7 +330,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                             ),
                             const SizedBox(height: 10),
 
-                            // CHEF Description Container ---------------------------------------------------------------
+                            // ---------------------------------- CHEF Description Container -------------------------------
 
                             Container(
                               decoration: BoxDecoration(
@@ -334,7 +341,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                                 padding: const EdgeInsets.all(15.0),
                                 child: Column(
                                   children: [
-                                    // CHEF Name / ID / FOLLOW Row ---------------------------------------------------------------
+                                    // --------------------------------- CHEF Name / ID / FOLLOW Row ----------------------------
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
@@ -410,14 +417,18 @@ class _RecipeScreenState extends State<RecipeScreen> {
                                         ),
                                         const SizedBox(width: 5),
 
-                                        // FOLLOW Button ---------------------------------------------------------------
-
+                                        // -------------------------------- FOLLOW Button -----------------------------
                                         SizedBox(
                                           width: 110,
                                           height: 30,
                                           child: ElevatedButton(
                                             style: ElevatedButton.styleFrom(
-                                              backgroundColor:!chefs[selectedChef].isFollowed? const Color(0xfffff3d00): const Color(0xff000000).withOpacity(.2),
+                                              backgroundColor:
+                                                  !chefs[selectedChef]
+                                                          .isFollowed
+                                                      ? const Color(0xfffff3d00)
+                                                      : const Color(0xff000000)
+                                                          .withOpacity(.2),
                                             ),
                                             onPressed: () {
                                               setState(() {
@@ -447,7 +458,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                                     ),
                                     const SizedBox(height: 25),
 
-                                    // RECIPES / FOLLOWERS / LIKES Indicate ---------------------------------------------------------------
+                                    // ------------------------------- RECIPES / FOLLOWERS / LIKES Indicate --------------------------------
 
                                     Row(
                                       mainAxisAlignment:
@@ -559,8 +570,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                                       ],
                                     ),
 
-                                    // CHEF ABOUT (ABOUT / SOCIAL MEDIA BUTTONS)---------------------------------------------------------------
-
+                                    // ------------------------------------ CHEF ABOUT (ABOUT / SOCIAL MEDIA BUTTONS) ---------------------------------
                                     Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -581,7 +591,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                                         const SizedBox(height: 25),
                                         Column(
                                           children: [
-                                            // SOCIAL MEDIA BUTTONS ---------------------------------------------------------------
+                                            // ---------------------------------- SOCIAL MEDIA BUTTONS --------------------------------
 
                                             Row(
                                               children: [
@@ -686,8 +696,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                             ),
                             const SizedBox(height: 10),
 
-                            //Cooking TIME ------------------------------------------------------------
-
+                            // ------------------------------ Cooking TIME ------------------------------
                             Container(
                               width: 200,
                               height: 35,
@@ -732,7 +741,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                             ),
                             const SizedBox(height: 20),
 
-                            //Ingredients ------------------------------------------------------------
+                            // ------------------------------------ Ingredients --------------------------------------
 
                             const Text(
                               "Ingredients",
@@ -753,7 +762,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                                 padding: const EdgeInsets.all(15.0),
                                 child: Column(
                                   children: [
-                                    // Ingredients List ---------------------------------------------------------------
+                                    // --------------------------------- Ingredients List -------------------------------
 
                                     Column(
                                       children: List.generate(
@@ -788,7 +797,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                             ),
                             const SizedBox(height: 20),
 
-                            // Cooking Instructions ------------------------------------------------------------
+                            // -------------------------------- Cooking Instructions -----------------------------
 
                             const Row(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -804,7 +813,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                                 Text(
                                   " START COOKING",
                                   style: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: 12,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: 'Poppins',
                                     color: Color(0xfffff3d00),
@@ -813,7 +822,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                                 Text(
                                   " for Cooking Instructions.",
                                   style: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: 12,
                                     fontWeight: FontWeight.w600,
                                     fontFamily: 'Poppins',
                                   ),

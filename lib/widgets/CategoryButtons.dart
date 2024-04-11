@@ -18,6 +18,7 @@ class CategoryButtons extends StatefulWidget {
 }
 
 class _CategoryButtonsState extends State<CategoryButtons> {
+  // ------------ Selected Button ------------
   int selectedBtn = 0;
 
   @override
@@ -27,6 +28,7 @@ class _CategoryButtonsState extends State<CategoryButtons> {
       children: [
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
+          // ------------ Category Buttons ------------
           child: Row(
             children: List.generate(
               categories.length,
@@ -53,6 +55,7 @@ class _CategoryButtonsState extends State<CategoryButtons> {
           ),
         ),
         const SizedBox(height: 15),
+        // ------------ Food Recipes ------------
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -64,6 +67,7 @@ class _CategoryButtonsState extends State<CategoryButtons> {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            // ------------ View All Button ------------
             TextButton(
               onPressed: () {},
               child: const Text(
@@ -78,6 +82,7 @@ class _CategoryButtonsState extends State<CategoryButtons> {
           ],
         ),
         const SizedBox(height: 20),
+        // ------------ Food Items ------------
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
@@ -87,6 +92,7 @@ class _CategoryButtonsState extends State<CategoryButtons> {
           ),
         ),
         const SizedBox(height: 20),
+        // ------------ Food Items ------------
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(

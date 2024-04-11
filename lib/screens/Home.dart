@@ -106,7 +106,7 @@ class _HomeState extends State<Home> {
 
                 Top_Chefs(chefs: chefs),
 
-                SizedBox(height: 20)
+                const SizedBox(height: 20)
               ],
             ),
           ),

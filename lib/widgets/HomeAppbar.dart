@@ -21,7 +21,7 @@ class _HomeAppbarState extends State<HomeAppbar> {
             style: TextStyle(
               fontFamily: "poppins",
               fontWeight: FontWeight.w700,
-              fontSize: 30,
+              fontSize: 29,
               height: 1,
             )),
         const Spacer(),

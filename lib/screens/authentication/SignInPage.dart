@@ -63,16 +63,14 @@ class _SignInPageState extends State<SignInPage> {
                         onPressed: () async {
                           dynamic result = await _auth.signInAnonymously();
                           if (result == null) {
-                            print("Error Signing In");
                           } else {
-                            print("Signed In");
-                            print(result.uid);
                           }
                         },
                         child: const Center(
                           child: Text(
                             "Skip",
                             style: TextStyle(
+                                // ignore: use_full_hex_values_for_flutter_colors
                                 color: Color(0xfffff3d00),
                                 fontSize: 15,
                                 fontWeight: FontWeight.w600),
@@ -121,6 +119,7 @@ class _SignInPageState extends State<SignInPage> {
                       Text(
                         'Login',
                         style: TextStyle(
+                            // ignore: use_full_hex_values_for_flutter_colors
                             color: Color(0xfffff3d00),
                             fontSize: 32,
                             fontWeight: FontWeight.w700,
@@ -150,6 +149,7 @@ class _SignInPageState extends State<SignInPage> {
                         Text(
                           error,
                           style: const TextStyle(
+                              // ignore: use_full_hex_values_for_flutter_colors
                               color: Color(0xfffff3d00), fontSize: 12.0),
                         ),
                         const SizedBox(
@@ -222,6 +222,7 @@ class _SignInPageState extends State<SignInPage> {
                           style: GoogleFonts.poppins(
                             fontSize: 12,
                             fontWeight: FontWeight.w500,
+                            // ignore: use_full_hex_values_for_flutter_colors
                             color: const Color(0xfffff3d00),
                           ),
                         ),
@@ -251,6 +252,7 @@ class _SignInPageState extends State<SignInPage> {
                                       fontFamily: "poppins",
                                       fontSize: 13,
                                       fontWeight: FontWeight.w800,
+                                      // ignore: use_full_hex_values_for_flutter_colors
                                       color: Color(0xfffff3d00)),
                                 ),
                               ),

@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   List screens = [
     const Home(),
     Container(color: Colors.green),
-    Favorite(),
+    const Favorite(),
     Container(color: Colors.yellow),
     Container(color: Colors.purple),
   ];
@@ -25,17 +25,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffFF3D00),
+      backgroundColor: const Color(0xffFF3D00),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(top: 9, bottom: 9, left: 10, right: 10),
         child: GNav(
-          backgroundColor: Color(0xffFF3D00),
-          activeColor: Color(0xffFF3D00),
+          backgroundColor: const Color(0xffFF3D00),
+          activeColor: const Color(0xffFF3D00),
           color: Colors.white,
           tabBackgroundColor: Colors.white,
           gap: 8,
           iconSize: 25,
-          padding: EdgeInsets.only(left: 15, right: 15, top: 9, bottom: 9),
+          padding: const EdgeInsets.only(left: 10, right: 10, top: 8, bottom: 8),
           tabs: const [
             GButton(icon: Iconsax.home, text: 'Home'),
             GButton(icon: Iconsax.calendar, text: 'Meal Plan'),
