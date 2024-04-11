@@ -1,153 +1,198 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:food_recipe_app_nsbm/models/Chef.dart';
-import 'package:food_recipe_app_nsbm/models/FoodItem.dart';
-import 'package:iconsax/iconsax.dart';
 
-class Favorite extends StatefulWidget {
-  const Favorite({super.key});
+class Item {
+  final String name;
+  final String image;
 
-  @override
-  State<Favorite> createState() => _FavoriteState();
+  Item({
+    required this.name,
+    required this.image,
+  });
 }
 
-class _FavoriteState extends State<Favorite> {
+class Favourite extends StatefulWidget {
+  const Favourite({Key? key}) : super(key: key);
+
+  @override
+  _FavouriteState createState() => _FavouriteState();
+}
+
+class _FavouriteState extends State<Favourite> {
+  List<Item> itemList = List.generate(
+    4,
+    (index) => Item(
+      name: 'Item ${index + 1}',
+      image: 'assets/images/banner1.png',
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffFF3D00),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: Column(
-            children: [
-              Expanded(
-                child: OverflowBox(
-                  maxWidth: MediaQuery.of(context).size.width,
-                  alignment: Alignment.topCenter,
-                  child: SingleChildScrollView(
-                    child: Column(children: [
-                      Container(
-                        height: 120,
-                        width: (MediaQuery.of(context).size.width) - 40,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: Row(
-                            children: [
-                              Container(
-                                width:
-                                    (MediaQuery.of(context).size.width - 90) /
-                                        2,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/images/banner1.png'),
-                                      fit: BoxFit.cover),
-                                  border: Border.all(
-                                      color: Color(0xffFF3D00), width: 3),
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              SizedBox(width: 25),
-                              Container(
-                                width:
-                                    (MediaQuery.of(context).size.width - 80) /
-                                        2,
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        const CircleAvatar(
-                                            backgroundImage: AssetImage(
-                                                'assets/images/p2.png'),
-                                            radius: 12),
-                                        const SizedBox(width: 10),
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            color: Colors.grey.shade400,
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(20)),
-                                          ),
-                                          child: Padding(
-                                            padding: const EdgeInsets.only(
-                                              left: 10,
-                                              right: 10,
-                                              top: 3,
-                                              bottom: 3,
-                                            ),
-                                            child: Text(
-                                              textAlign: TextAlign.center,
-                                              chefs[0].name.toUpperCase(),
-                                              style: TextStyle(
-                                                  fontSize: 8,
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.bold),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          foods[0].name,
-                                          style: TextStyle(
-                                            fontSize: 18,
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                        IconButton(
-                                          onPressed: () {},
-                                          icon: Icon(
-                                            Iconsax.trash4,
-                                            size: 24,
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                    Row(
-                                      children: [
-                                        const Icon(
-                                          Iconsax.clock,
-                                          color: Colors.black,
-                                          size: 22,
-                                        ),
-                                        const SizedBox(width: 20),
-                                        Text(
-                                          "${foods[0].time} min",
-                                          style: const TextStyle(
-                                            fontSize: 12,
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.w600,
-                                            fontFamily: 'Poppins',
-                                          ),
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ]),
-                  ),
+      backgroundColor: Color.fromRGBO(255, 61, 0, 1),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(kToolbarHeight),
+        child: AppBar(
+          backgroundColor: Color.fromRGBO(255, 61, 0, 1),
+          leading: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ClipOval(
+              child: Material(
+                color: Colors.white, // button color
+                child: InkWell(
+                  splashColor: Colors.grey, // splash color
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  }, // button pressed
+                  child: SizedBox(
+                      width: 32,
+                      height: 32,
+                      child:
+                          Icon(Icons.arrow_back, color: Colors.black)), // icon
                 ),
-              )
-            ],
+              ),
+            ),
           ),
+          title: const Text('Favourite'),
         ),
       ),
+      body: itemList.isEmpty
+          ? Center(
+              child: Text(
+                'No favorites found',
+                style: TextStyle(fontSize: 18, color: Colors.white),
+              ),
+            )
+          : ListView.builder(
+              itemCount: itemList.length,
+              itemBuilder: (context, index) {
+                final item = itemList[index];
+                return Dismissible(
+                  key: Key(item.name),
+                  direction: DismissDirection.endToStart,
+                  background: Container(
+                    alignment: Alignment.centerRight,
+                    padding: EdgeInsets.only(right: 20.0),
+                    color: Colors.red,
+                    child: Icon(Icons.delete, color: Colors.white),
+                  ),
+                  onDismissed: (direction) {
+                    setState(() {
+                      itemList.removeAt(index);
+                    });
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 21, vertical: 11),
+                    child: Container(
+                      height: 97,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(230, 230, 230, 1),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 15),
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Image.asset(
+                                item.image,
+                                width: 141,
+                                height: 77,
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            flex: 3,
+                            child: Container(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const SizedBox(height: 13),
+                                  Row(
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/avatar.png',
+                                        width: 20,
+                                        height: 20,
+                                      ),
+                                      const SizedBox(width: 6),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color:
+                                              Color.fromRGBO(217, 217, 217, 1),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        child: const Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 5, vertical: 1),
+                                          child: Text(
+                                            'Venuja Vethmin',
+                                            style: TextStyle(
+                                                fontSize: 8,
+                                                fontFamily: 'Poppins'),
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  const SizedBox(height: 10),
+                                  const Text(
+                                    'Chicken Saled',
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      fontFamily: 'Poppins',
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/time.png',
+                                        width: 16,
+                                        height: 16,
+                                      ),
+                                      const SizedBox(width: 6),
+                                      const Text(
+                                        '13 min',
+                                        style: TextStyle(
+                                          fontSize: 13,
+                                          fontFamily: 'Poppins',
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            flex: 1,
+                            child: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  itemList.removeAt(index);
+                                });
+                              },
+                              child: Container(
+                                alignment: Alignment.center,
+                                child: Icon(Icons.delete),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
     );
   }
 }
