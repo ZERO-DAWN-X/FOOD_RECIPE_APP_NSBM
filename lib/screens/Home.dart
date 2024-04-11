@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:food_recipe_app_nsbm/models/Chef.dart';
 import 'package:food_recipe_app_nsbm/models/TopRecipes.dart';
 import 'package:food_recipe_app_nsbm/widgets/CategoryButtons.dart';
 import 'package:food_recipe_app_nsbm/widgets/HomeSearchBar.dart';
 import 'package:food_recipe_app_nsbm/widgets/Top_Recipes.dart';
+import 'package:food_recipe_app_nsbm/widgets/Top_chefs.dart';
 import '../widgets/HomeAppbar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:food_recipe_app_nsbm/constants.dart';
@@ -19,6 +21,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: Padding(
           padding: const EdgeInsets.all(18.0),
           child: SingleChildScrollView(
@@ -93,8 +96,17 @@ class _HomeState extends State<Home> {
 
                 const CategoryButtons(),
 
-                const SizedBox(height: 20),
-                // CategoryItems(),
+                const SizedBox(height: 30),
+
+                const Text(
+                  "Top Chefs",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 10),
+
+                Top_Chefs(chefs: chefs),
+
+                SizedBox(height: 20)
               ],
             ),
           ),

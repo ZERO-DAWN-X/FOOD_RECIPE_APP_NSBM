@@ -30,8 +30,8 @@ class _FoodItemRowState extends State<FoodItemRow> {
           return Food(
             name: data['name'],
             image: data['image'],
-            time: (data['time'] ?? 0).toDouble(), 
-            rate: (data['rate'] ?? 0).toDouble(), 
+            time: (data['time'] ?? 0).toDouble(),
+            rate: (data['rate'] ?? 0).toDouble(),
             review: data['review'] ?? 0,
             isLiked: data['isLiked'] ?? false,
           );
@@ -41,12 +41,12 @@ class _FoodItemRowState extends State<FoodItemRow> {
           children: List.generate(
             foods.length,
             (index) => GestureDetector(
-              // onTap: () => Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => RecipeScreen(food: widget.foods[index]),
-              //   ),
-              // ),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => RecipeScreen(food: foods[index]),
+                ),
+              ),
               child: Container(
                 margin: const EdgeInsets.only(right: 15),
                 width: 260,

@@ -149,7 +149,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         ),
                         Text(
                           error,
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Color(0xfffff3d00), fontSize: 12.0),
                         ),
                         const SizedBox(

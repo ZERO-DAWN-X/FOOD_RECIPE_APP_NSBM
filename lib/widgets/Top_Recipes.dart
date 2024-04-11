@@ -34,7 +34,7 @@ class _TopRecipesState extends State<TopRecipes> {
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.black.withOpacity(0.5),
+                      color: Colors.black.withOpacity(0.4),
                     ),
                   ),
                   Positioned(

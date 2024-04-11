@@ -87,6 +87,14 @@ class _CategoryButtonsState extends State<CategoryButtons> {
           ),
         ),
         const SizedBox(height: 20),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              Tabscreens1[selectedBtn],
+            ],
+          ),
+        ),
       ],
     );
   }
