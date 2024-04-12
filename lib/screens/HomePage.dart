@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app_nsbm/screens/Favourite.dart';
 import 'package:food_recipe_app_nsbm/screens/Home.dart';
+import 'package:food_recipe_app_nsbm/screens/Settings.dart';
+import 'package:food_recipe_app_nsbm/screens/Shop.dart';
+
+
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -18,24 +22,25 @@ class _HomePageState extends State<HomePage> {
     const Home(),
     Container(color: Colors.green),
     const Favorite(),
-    Container(color: Colors.yellow),
-    Container(color: Colors.purple),
+    FoodIngredientsBuyPage(),
+    SettingPage()
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffFF3D00),
+      backgroundColor: Colors.white,
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(top: 9, bottom: 9, left: 10, right: 10),
         child: GNav(
-          backgroundColor: const Color(0xffFF3D00),
-          activeColor: const Color(0xffFF3D00),
-          color: Colors.white,
-          tabBackgroundColor: Colors.white,
+          backgroundColor: Colors.white,
+          activeColor: Color.fromARGB(255, 255, 255, 255),
+          color: const Color(0xffFF3D00),
+          tabBackgroundColor: const Color(0xffFF3D00),
           gap: 8,
           iconSize: 25,
-          padding: const EdgeInsets.only(left: 10, right: 10, top: 8, bottom: 8),
+          padding:
+              const EdgeInsets.only(left: 10, right: 10, top: 8, bottom: 8),
           tabs: const [
             GButton(icon: Iconsax.home, text: 'Home'),
             GButton(icon: Iconsax.calendar, text: 'Meal Plan'),

@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart'; // TextInputFormatter
 import 'package:food_recipe_app_nsbm/services/auth.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../constants/images.dart';
 
 class SignInPage extends StatefulWidget {
-  //Function to toggle between SignIn and SignUp Page
+  // Function to toggle between SignIn and SignUp Page
   final Function toggleView;
-  //Constructor
+
+  // Constructor
   const SignInPage({required this.toggleView, super.key});
 
   @override
@@ -14,16 +16,15 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
-  bool _obscureText = true; // Initially hide password text
+  bool _obscureText = true; // hide password text
+  bool _loading = false; // Flag to track loading state
 
-  //ref for the AuthService Class
   final AuthServices _auth = AuthServices();
 
-  //Form Key
-
+  // Form Key
   final _formKey = GlobalKey<FormState>();
 
-  //Email Password States
+  // Email Password States
   String email = "";
   String password = "";
   String error = "";
@@ -34,6 +35,7 @@ class _SignInPageState extends State<SignInPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            // Image Container ---------------------------
             Container(
               height: 340,
               decoration: const BoxDecoration(
@@ -63,8 +65,7 @@ class _SignInPageState extends State<SignInPage> {
                         onPressed: () async {
                           dynamic result = await _auth.signInAnonymously();
                           if (result == null) {
-                          } else {
-                          }
+                          } else {}
                         },
                         child: const Center(
                           child: Text(
@@ -150,7 +151,8 @@ class _SignInPageState extends State<SignInPage> {
                           error,
                           style: const TextStyle(
                               // ignore: use_full_hex_values_for_flutter_colors
-                              color: Color(0xfffff3d00), fontSize: 12.0),
+                              color: Color(0xfffff3d00),
+                              fontSize: 12.0),
                         ),
                         const SizedBox(
                           height: 7,
@@ -168,7 +170,12 @@ class _SignInPageState extends State<SignInPage> {
                                   email = value;
                                 });
                               },
-                              decoration: textField_Decoration),
+                              decoration: textField_Decoration,
+                              inputFormatters: [
+                                // -------------- Add "@gmail.com"
+                                LengthLimitingTextInputFormatter(50), // --------- Limit email length
+                                EmailTextInputFormatter(),
+                              ]),
                         ),
                         const SizedBox(
                           height: 20,
@@ -188,7 +195,7 @@ class _SignInPageState extends State<SignInPage> {
                               });
                             },
                             obscureText:
-                                _obscureText, // Toggle password visibility
+                                _obscureText, // password visibility
                             decoration: textField_Decoration.copyWith(
                               hintText: "Enter password",
                               suffixIcon: Padding(
@@ -206,7 +213,7 @@ class _SignInPageState extends State<SignInPage> {
                                   onPressed: () {
                                     setState(() {
                                       _obscureText =
-                                          !_obscureText; // Toggle password visibility
+                                          !_obscureText; // password visibility
                                     });
                                   },
                                 ),
@@ -288,12 +295,19 @@ class _SignInPageState extends State<SignInPage> {
                         ),
                         GestureDetector(
                           onTap: () async {
+                            // Set loading flag to true
+                            setState(() {
+                              _loading = true;
+                            });
+
                             dynamic result = await _auth
                                 .signInWithEmailAndPassword(email, password);
 
                             if (result == null) {
                               setState(() {
                                 error = "Invalid Email or Password";
+                                
+                                _loading = false;
                               });
                             }
                           },
@@ -304,7 +318,11 @@ class _SignInPageState extends State<SignInPage> {
                             // border: Border.all(width: 2,color: Color(0xfff1976D2))
 
                             child: Center(
-                              child: Text("SIGN IN", style: LogBtnStyle),
+                              child: _loading
+                                  ? const CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                          Colors.white))
+                                  : Text("SIGN IN", style: LogBtnStyle),
                             ),
                           ),
                         ),
@@ -319,5 +337,21 @@ class _SignInPageState extends State<SignInPage> {
         ),
       ),
     );
+  }
+}
+
+// -------------- Add "@gmail.com"
+class EmailTextInputFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(
+      TextEditingValue oldValue, TextEditingValue newValue) {
+    // Append "@gmail.com" if the user input does not contain it already
+    if (!newValue.text.contains("@") && !newValue.text.endsWith(".com")) {
+      return newValue.copyWith(
+        text: '${newValue.text}@gmail.com',
+        selection: TextSelection.collapsed(offset: newValue.text.length),
+      );
+    }
+    return newValue;
   }
 }
