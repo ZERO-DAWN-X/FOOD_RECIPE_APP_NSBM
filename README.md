@@ -3,7 +3,7 @@
 
 ![Logo](./Screenshots/app3.png)
 
-![Logo](./Screenshots/MY_LOGO.png)
+
 
 
 
